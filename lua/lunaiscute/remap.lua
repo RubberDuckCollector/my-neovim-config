@@ -36,8 +36,30 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
-vim.keymap.set(
-  "n",
-  "<leader>t",
-  "_ithe <Esc>"
-)
+-- vanilla vim remaps for auto closing quotes and brackets
+-- to be used if https://github.com/Raimondi/delimitMate doesn't work'
+
+-- vim.keymap.set("i", "\"", "\"\"<Left>")
+-- vim.keymap.set("i", "\'", "\'\'<Left>")
+-- vim.keymap.set("i", "`", "``<Left>")
+-- vim.keymap.set("i", "(", "()<Left>")
+-- vim.keymap.set("i", "[", "[]<Left>")
+-- vim.keymap.set("i", "{", "{}<Left>")
+
+-- these are for work on flash cards in the format:
+-- source_language_prompt|target_language_answer
+vim.keymap.set("n", "<leader>t", "_ithe <Esc>")
+
+-- 1: el
+-- 2: la
+-- 3: los
+-- 4: las
+
+vim.keymap.set("n", "1", "_f|ael <Esc>")
+vim.keymap.set("n", "2", "_f|ala <Esc>")
+vim.keymap.set("n", "3", "_f|alos <Esc>")
+vim.keymap.set("n", "4", "_f|alas <Esc>")
+vim.keymap.set("n", "5", "_f|i (masculine)<Esc>")
+vim.keymap.set("n", "6", "_f|i (feminine)<Esc>")
+vim.keymap.set("n", "7", "_f|i (male)<Esc>")
+vim.keymap.set("n", "8", "_f|i (female)<Esc>")

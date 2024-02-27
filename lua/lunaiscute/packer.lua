@@ -30,12 +30,13 @@ return require('packer').startup(function(use)
       indent = { enable = false },
     }
   })
-  use('nvim-treesitter/playground')
-  use('theprimeagen/harpoon')
-  use('mbbill/undotree')
-  use('tpope/vim-fugitive')
+  use 'nvim-treesitter/playground'
+  use 'theprimeagen/harpoon'
+  use 'mbbill/undotree'
+  use 'tpope/vim-fugitive'
   use 'Vimjas/vim-python-pep8-indent'
   use 'tpope/vim-surround'
+  use 'Raimondi/delimitMate'
 
 
   use {
