@@ -30,13 +30,22 @@ return require('packer').startup(function(use)
       indent = { enable = false },
     }
   })
+
   use 'nvim-treesitter/playground'
-  use 'theprimeagen/harpoon'
-  use 'mbbill/undotree'
-  use 'tpope/vim-fugitive'
+  use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h
+  use 'mbbill/undotree' -- <leader>u
   use 'Vimjas/vim-python-pep8-indent'
+  use 'Raimondi/delimitMate' -- auto completes '', "", (), etc and supports deletion of them
+                             -- has unwanted behaviour with nvim-ts-autotag where an extra closing > is inserted, either have to disable this when writing html or cope with the tag, or config delimitMate to ignore < characters
+  use 'dapt4/vim-autoSurround' -- select the text with visual mode and press a button like , or (
+  use 'windwp/nvim-ts-autotag'
+  use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
+                                            -- not a clue on how to set this up
+
+  -- tpope
   use 'tpope/vim-surround'
-  use 'Raimondi/delimitMate'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-commentary'
 
 
   use {
@@ -84,7 +93,6 @@ return require('packer').startup(function(use)
 
   use({ 'zyedidia/vim-snake', lazy = false })
 
-  use 'tpope/vim-commentary'
 
   use({
     'jim-fx/sudoku.nvim',

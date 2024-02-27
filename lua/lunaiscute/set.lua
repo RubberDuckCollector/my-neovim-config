@@ -65,3 +65,4 @@ vim.cmd([[
     autocmd FileType * lua Set_filetype_settings()
   augroup END
 ]])
+
