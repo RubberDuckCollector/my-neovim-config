@@ -2,17 +2,22 @@ local lsp_zero = require('lsp-zero')
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local lsp_format_on_save = function(bufnr)
-  vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-  vim.api.nvim_create_autocmd('BufWritePre', {
-    group = augroup,
-    buffer = bufnr,
-    callback = function()
-      vim.lsp.buf.format()
-      filter = function(client)
-        return client.name == "lsp-zero"
-      end
-    end,
-  })
+
+  local filetype = vim.bo[bufnr].filetype
+
+  if filetype ~= "python" then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format()
+        filter = function(client)
+          return client.name == "lsp-zero"
+        end
+      end,
+    })
+  end
 end
 
 local cmp = require('cmp')
@@ -31,7 +36,7 @@ lsp_zero.on_attach(function(client, bufnr)
   lsp_zero.default_keymaps({ buffer = bufnr })
   local opts = { buffer = bufnr, remap = true }
 
-  -- lsp_format_on_save(bufnr)
+  lsp_format_on_save(bufnr)
 
   vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
   vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
