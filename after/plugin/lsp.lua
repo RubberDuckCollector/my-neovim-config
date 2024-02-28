@@ -2,7 +2,8 @@ local lsp_zero = require('lsp-zero')
 
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local lsp_format_on_save = function(bufnr)
-
+  -- don't enable format on save if the file type is python
+  -- because there are compatibility issues
   local concerned_files = { "python" }
   local filetype = vim.bo[bufnr].filetype
 
