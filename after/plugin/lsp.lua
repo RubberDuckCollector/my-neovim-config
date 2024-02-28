@@ -3,9 +3,19 @@ local lsp_zero = require('lsp-zero')
 local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 local lsp_format_on_save = function(bufnr)
 
+  local concerned_files = { "python" }
   local filetype = vim.bo[bufnr].filetype
 
-  if filetype ~= "python" then
+  local found = false
+  for _, lang in ipairs(concerned_files) do
+    if lang == filetype then
+      found = true
+      break
+    end
+  end
+
+
+  if found == false then
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
     vim.api.nvim_create_autocmd('BufWritePre', {
       group = augroup,

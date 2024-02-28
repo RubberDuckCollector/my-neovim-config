@@ -26,25 +26,25 @@ return require('packer').startup(function(use)
     end
   })
   use({ 'nvim-treesitter/nvim-treesitter', {
-      run = ':TSUpdate',
-      indent = { enable = false },
-    }
+    run = ':TSUpdate',
+    indent = { enable = false },
+  }
   })
 
   use 'nvim-treesitter/playground'
   use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h
-  use 'mbbill/undotree' -- <leader>u
+  use 'mbbill/undotree'      -- <leader>u
   use 'Vimjas/vim-python-pep8-indent'
   use 'Raimondi/delimitMate' -- auto completes '', "", (), etc and supports deletion of them
-                             -- has unwanted behaviour with nvim-ts-autotag where an extra closing > is inserted
-                             -- either have to disable this when writing html or cope with the tag
-                             -- or config delimitMate to ignore < characters
-                             -- or make a tag e.g <p> and substitue the > with another >
-                             -- thus invoking nvim-ts-autotag but not invoking delimitMate
-  use 'dapt4/vim-autoSurround' -- select the text with visual mode and press a button like , or (
+  -- has unwanted behaviour with nvim-ts-autotag where an extra closing > is inserted
+  -- either have to disable this when writing html or cope with the tag
+  -- or config delimitMate to ignore < characters
+  -- or make a tag e.g <p> and substitue the > with another >
+  -- thus invoking nvim-ts-autotag but not invoking delimitMate
+
+  use 'dapt4/vim-autoSurround'              -- select the text with visual mode and press a button like , or (
   use 'windwp/nvim-ts-autotag'
   use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
-                                            -- not a clue on how to set this up
 
   -- tpope
   use 'tpope/vim-surround'

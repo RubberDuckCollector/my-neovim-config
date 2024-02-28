@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+-- vim.g.indent_blankline_char = "┃"
+vim.g.indent_blankline_char = '┃'
+
 -- opts
 vim.opt.guicursor = ""
 
@@ -65,4 +68,3 @@ vim.cmd([[
     autocmd FileType * lua Set_filetype_settings()
   augroup END
 ]])
-
