@@ -55,11 +55,19 @@ vim.keymap.set("n", "<leader>t", "_ithe <Esc>")
 -- 3: los
 -- 4: las
 
-vim.keymap.set("n", "1", "_f|ael <Esc>")
-vim.keymap.set("n", "2", "_f|ala <Esc>")
-vim.keymap.set("n", "3", "_f|alos <Esc>")
-vim.keymap.set("n", "4", "_f|alas <Esc>")
-vim.keymap.set("n", "5", "_f|i (masculine)<Esc>")
-vim.keymap.set("n", "6", "_f|i (feminine)<Esc>")
-vim.keymap.set("n", "7", "_f|i (male)<Esc>")
-vim.keymap.set("n", "8", "_f|i (female)<Esc>")
+-- SPANISH
+-- vim.keymap.set("n", "1", "_f|ael <Esc>")
+-- vim.keymap.set("n", "2", "_f|ala <Esc>")
+-- vim.keymap.set("n", "3", "_f|alos <Esc>")
+-- vim.keymap.set("n", "4", "_f|alas <Esc>")
+-- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>")
+-- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>")
+-- vim.keymap.set("n", "7", "_f|i (male)<Esc>")
+-- vim.keymap.set("n", "8", "_f|i (female)<Esc>")
+
+-- GERMAN
+vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>")
+vim.keymap.set("n", "2", "_f|i (masculine)<Esc>")
+vim.keymap.set("n", "3", "_f|i (feminine)<Esc>")
+vim.keymap.set("n", "4", "_f|i (male)<Esc>")
+vim.keymap.set("n", "5", "_f|i (female)<Esc>")

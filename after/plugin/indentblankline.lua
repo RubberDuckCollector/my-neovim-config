@@ -28,5 +28,8 @@ require("ibl").setup {
   indent = {
     -- highlight = highlight -- uncomment this to make all indent lines show in rainbow colours but the current scope won't be interactive
     char = "┃"
+    -- char = "║"
+    -- char = "█"
+    -- char = "│"
   }
 }
