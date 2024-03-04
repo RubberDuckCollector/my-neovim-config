@@ -1,32 +1,32 @@
 -- require("ibl").setup()
-local highlight = {
-  "RainbowRed",
-  "RainbowYellow",
-  "RainbowBlue",
-  "RainbowOrange",
-  "RainbowGreen",
-  "RainbowViolet",
-  "RainbowCyan",
-}
+-- local highlight = {
+--   "RainbowRed",
+--   "RainbowYellow",
+--   "RainbowBlue",
+--   "RainbowOrange",
+--   "RainbowGreen",
+--   "RainbowViolet",
+--   "RainbowCyan",
+-- }
 
-local hooks = require "ibl.hooks"
+-- local hooks = require "ibl.hooks"
 -- create the highlight groups in the highlight setup hook, so they are reset
 -- every time the colorscheme changes
 
-hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-  vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
-  vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
-  vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
-  vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
-  vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
-  vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
-  vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-end)
+-- hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+--   vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+--   vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+--   vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+--   vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+--   vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+--   vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+--   vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+-- end)
 
 require("ibl").setup {
-  scope = { highlight = highlight },
+  -- scope = { highlight = highlight },
   indent = {
-    -- highlight = highlight -- uncomment this to make all indent lines show in rainbow colours but the current scope won't be interactive
+    -- highlight = highlight, -- uncomment this to make all indent lines show in rainbow colours but the current scope won't be interactive
     char = "┃"
     -- char = "║"
     -- char = "█"
