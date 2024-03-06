@@ -31,5 +31,9 @@ require("ibl").setup {
     -- char = "║"
     -- char = "█"
     -- char = "│"
-  }
+  },
+
+  scope = {
+    enabled = false
+  },
 }
