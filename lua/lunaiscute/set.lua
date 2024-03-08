@@ -20,11 +20,11 @@ vim.opt.undofile = true
 
 -- with these 2 settings, the cursor will always stay in the middle of the screen where possible.
 -- I like this because it's great for readability when i'm writing long lines of documentation in .md files.
-vim.opt.scrolloff = 1000     -- cursor will stay 1000 lines from the bottom/top when scrolling down
-vim.opt.sidescrolloff = 1000 -- cursor will stay 1000 lines from the left/right when side-scrolling
+vim.opt.scrolloff = 1000   -- cursor will stay 1000 lines from the bottom/top when scrolling down
+vim.opt.sidescrolloff = 10 -- cursor will stay 10 lines from the left/right when side-scrolling
 
-vim.opt.cmdheight = 2        -- more space in the neovim command line for displaying messages
-vim.opt.wrap = false         -- no soft wrap
+vim.opt.cmdheight = 2      -- more space in the neovim command line for displaying messages
+vim.opt.wrap = false       -- no soft wrap
 
 -- search results highlight themselves reactively
 vim.opt.hlsearch = false
