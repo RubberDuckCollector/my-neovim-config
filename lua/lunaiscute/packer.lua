@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
   use 'dapt4/vim-autoSurround'              -- select the text with visual mode and press a button like , or (
   use 'windwp/nvim-ts-autotag'
   use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
+  -- use 'junegunn/vim-easy-align'
+  use 'dhruvasagar/vim-table-mode'
 
   -- tpope
   use 'tpope/vim-surround'
