@@ -54,12 +54,15 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-speeddating'
 
+  -- use 'preservim/vim-markdown'
 
   use {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   }
+
+  use 'andweeb/presence.nvim'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
