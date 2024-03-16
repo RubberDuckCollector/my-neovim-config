@@ -41,25 +41,25 @@ vim.opt.cursorcolumn = true
 vim.opt.history = 1000
 
 function Set_filetype_settings()
-  local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
-  local filetype = vim.bo.filetype
+    local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
+    local filetype = vim.bo.filetype
 
-  local found = false
-  for _, lang in ipairs(concerned_files) do
-    if lang == filetype then
-      found = true
-      break
+    local found = false
+    for _, lang in ipairs(concerned_files) do
+        if lang == filetype then
+            found = true
+            break
+        end
     end
-  end
 
-  if found then
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.shiftwidth = 2
-  else
-    do
+    if found then
+        vim.bo.tabstop = 2
+        vim.bo.softtabstop = 2
+        vim.bo.shiftwidth = 2
+    else
+        do
+        end
     end
-  end
 end
 
 -- Set autocmd for FileType event to trigger the function
