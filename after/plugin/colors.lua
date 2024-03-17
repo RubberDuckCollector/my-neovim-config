@@ -1,5 +1,6 @@
 function ColorMe()
   color = color or "kanagawa"
+  -- color = color or "space_vim_theme"
   vim.cmd.colorscheme(color)
 
   -- test

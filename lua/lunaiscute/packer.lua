@@ -19,11 +19,19 @@ return require('packer').startup(function(use)
     -- 'alexmozaidze/palenight.nvim',
     'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
     -- 'navarasu/onedark.nvim',
+    -- 'https://github.com/liuchengxu/space-vim-theme.git',
+
     as = 'kanagawa',
     config = function()
       style = 'wave'
       vim.cmd('colorscheme kanagawa')
     end
+
+    -- as = 'space_vim_theme',
+    -- config = function()
+    --   style = 'dark'
+    --   vim.cmd('colorscheme space_vim_theme')
+    -- end
   })
   use({ 'nvim-treesitter/nvim-treesitter', {
     run = ':TSUpdate',

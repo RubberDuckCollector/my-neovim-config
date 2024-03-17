@@ -3,6 +3,7 @@ vim.g.mapleader = " "
 -- opts
 -- vim.opt.guicursor = ""
 
+-- vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.tabstop = 4
@@ -32,34 +33,36 @@ vim.opt.incsearch = true
 -- vim.opt.foldmethod = 'manual'
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 9 -- makes it so all folds are opened when file is opened, folds are still able to be closed
 vim.opt.foldenable = true
 vim.opt.splitbelow = true
 vim.opt.conceallevel = 0
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = false
--- vim.opt.foldcolumn = "9"
+-- vim.opt.foldcolumn = "9" -- shows all folds in the left hand column to the left of where the numbers are
 vim.opt.history = 1000
+vim.opt.updatetime = 50
 
 function Set_filetype_settings()
-  local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
-  local filetype = vim.bo.filetype
+    local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
+    local filetype = vim.bo.filetype
 
-  local found = false
-  for _, lang in ipairs(concerned_files) do
-    if lang == filetype then
-      found = true
-      break
+    local found = false
+    for _, lang in ipairs(concerned_files) do
+        if lang == filetype then
+            found = true
+            break
+        end
     end
-  end
 
-  if found then
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.shiftwidth = 2
-  else
-    do
+    if found then
+        vim.bo.tabstop = 2
+        vim.bo.softtabstop = 2
+        vim.bo.shiftwidth = 2
+    else
+        do
+        end
     end
-  end
 end
 
 -- Set autocmd for FileType event to trigger the function
