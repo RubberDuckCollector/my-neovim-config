@@ -1,6 +1,16 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pylsp.setup {}
+lspconfig.pylsp.setup({
+  settings = {
+    pylsp = {
+      plugins = {
+        flake8 = {
+          extendIgnore = { "E501" }
+        }
+      }
+    }
+  }
+})
 lspconfig.tsserver.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup({})

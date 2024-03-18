@@ -55,6 +55,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
   -- use 'junegunn/vim-easy-align'
   use 'dhruvasagar/vim-table-mode'
+  use 'mzlogin/vim-markdown-toc'
 
   -- tpope
   use 'tpope/vim-surround'
