@@ -11,9 +11,16 @@ lspconfig.pylsp.setup({
     }
   }
 })
+-- lspconfig.ltex.setup {
+--   settings = {
+--     ltex = {
+--       language = { "es", "en-GB" },
+--     }
+--   }
+-- }
 lspconfig.tsserver.setup {}
 lspconfig.lua_ls.setup {}
-lspconfig.gopls.setup({})
+lspconfig.gopls.setup {}
 lspconfig.ruby_ls.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
@@ -21,3 +28,5 @@ lspconfig.rust_analyzer.setup {
     ['rust-analyzer'] = {},
   },
 }
+
+return lspconfig

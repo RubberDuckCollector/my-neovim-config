@@ -59,6 +59,23 @@ return require('packer').startup(function(use)
   use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
 
+
+  -- use({ -- install without yarn or npm
+  --   "iamcco/markdown-preview.nvim",
+  --   run = function() vim.fn["mkdp#util#install"]() end,
+  -- })
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = {
+        "markdown" }
+    end,
+    ft = { "markdown" },
+  })
+
+
   -- tpope
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'

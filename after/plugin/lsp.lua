@@ -76,6 +76,7 @@ require('mason-lspconfig').setup({
     'gopls',
     'hls',
     'zls',
+    -- 'ltex',
   },
 
   handlers = {

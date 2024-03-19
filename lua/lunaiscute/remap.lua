@@ -48,7 +48,7 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- these are for work on flash cards in the format:
 -- source_language_prompt|target_language_answer
-vim.keymap.set("n", "<leader>t", "_ithe <Esc>")
+-- vim.keymap.set("n", "<leader>t", "_ithe <Esc>")
 
 -- 1: el
 -- 2: la
