@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   -- use 'junegunn/vim-easy-align'
   use 'dhruvasagar/vim-table-mode'
   use 'mzlogin/vim-markdown-toc'
+  use 'folke/zen-mode.nvim'
 
   -- tpope
   use 'tpope/vim-surround'
