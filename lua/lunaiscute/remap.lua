@@ -73,3 +73,42 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 -- vim.keymap.set("n", "3", "_f|i (feminine)<Esc>")
 -- vim.keymap.set("n", "4", "_f|i (male)<Esc>")
 -- vim.keymap.set("n", "5", "_f|i (female)<Esc>")
+
+-- vim.api.nvim_set_keymap('n', 'B', 'v:lua.B_function()', { expr = true, noremap = true, silent = true })
+
+-- function _G.B_function()
+--   local line = vim.api.nvim_get_current_line()
+--   local col = vim.fn.col('.')
+--   local substr = string.sub(line, 1, col - 1)
+--   if string.match(substr, '^%s*$') then
+--     return '0'
+--   else
+--     return 'B'
+--   end
+-- end
+
+-- vim.api.nvim_set_keymap('n', 'b', 'v:lua.b_function()', { expr = true, noremap = true, silent = true })
+
+-- function _G.b_function()
+--   local line = vim.api.nvim_get_current_line()
+--   local col = vim.fn.col('.')
+--   local substr = string.sub(line, 1, col - 1)
+--   if string.match(substr, '^%s*$') then
+--     return '0'
+--   else
+--     return 'b'
+--   end
+-- end
+
+-- vim.api.nvim_set_keymap('n', 'W', 'v:lua.W_function()', { expr = true, noremap = true, silent = true })
+
+-- function _G.W_function()
+--   local line = vim.api.nvim_get_current_line()
+--   local col = vim.fn.col('.')
+--   local substr = string.sub(line, col)
+--   if string.match(substr, '^%s*$') then
+--     return 'W'
+--   else
+--     return 'w'
+--   end
+-- end

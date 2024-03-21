@@ -3,6 +3,12 @@ vim.g.mapleader = " "
 -- opts
 -- vim.opt.guicursor = ""
 
+-- nvim table mode
+-- this disables syntax highlighting when within table mode
+-- doing so dramatically speeds up nvim
+-- which means the syntax highlighting you get when in table mode is slowing down a lot
+vim.g.table_mode_syntax = 0
+
 -- vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.relativenumber = true -- relative line numbers
