@@ -39,6 +39,10 @@ return require('packer').startup(function(use)
   }
   })
 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
   use 'nvim-treesitter/playground'
   use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h
   use 'mbbill/undotree'      -- <leader>u
@@ -54,11 +58,22 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
   -- use 'junegunn/vim-easy-align'
+
+  -- tpope
+  use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-speeddating'
+
+  -- markdown
+
   use 'dhruvasagar/vim-table-mode'
   use 'mzlogin/vim-markdown-toc'
   use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
+  -- use 'vim-pandoc/vim-pandoc-syntax'
 
+  -- use 'preservim/vim-markdown'
 
   -- use({ -- install without yarn or npm
   --   "iamcco/markdown-preview.nvim",
@@ -74,15 +89,6 @@ return require('packer').startup(function(use)
     end,
     ft = { "markdown" },
   })
-
-
-  -- tpope
-  use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-speeddating'
-
-  -- use 'preservim/vim-markdown'
 
   use {
     'williamboman/mason.nvim',
