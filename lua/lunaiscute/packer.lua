@@ -60,13 +60,13 @@ return require('packer').startup(function(use)
   -- use 'junegunn/vim-easy-align'
 
   -- tpope
+  use 'tpope/vim-repeat'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
   use 'tpope/vim-speeddating'
 
   -- markdown
-
   use 'dhruvasagar/vim-table-mode'
   use 'mzlogin/vim-markdown-toc'
   use 'folke/zen-mode.nvim'
@@ -120,8 +120,6 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   }
-
-
 
   -- GAMES
   use({ 'theprimeagen/vim-be-good', lazy = false })
