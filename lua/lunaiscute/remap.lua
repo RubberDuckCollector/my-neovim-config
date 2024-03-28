@@ -36,6 +36,8 @@ vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
 
+-- zen mode
+vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 
 -- vanilla vim remaps for auto closing quotes and brackets
 -- to be used if https://github.com/Raimondi/delimitMate doesn't work'

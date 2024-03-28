@@ -5,6 +5,7 @@ local lsp_format_on_save = function(bufnr)
   -- don't enable format on save if the file type is python
   -- because there are compatibility issues
   local concerned_files = { "python" }
+  -- local concerned_files = {}
   local filetype = vim.bo[bufnr].filetype
 
   local found = false

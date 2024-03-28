@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     --   vim.cmd('colorscheme space_vim_theme')
     -- end
   })
+
   use({ 'nvim-treesitter/nvim-treesitter', {
     run = ':TSUpdate',
     indent = { enable = false },
