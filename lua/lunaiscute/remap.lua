@@ -39,6 +39,10 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 -- zen mode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 
+-- computer science spiel
+vim.keymap.set("n", "<leader>i",
+  "i- [ ] **If this box is unchecked, these code examples have not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
+
 -- vanilla vim remaps for auto closing quotes and brackets
 -- to be used if https://github.com/Raimondi/delimitMate doesn't work'
 
