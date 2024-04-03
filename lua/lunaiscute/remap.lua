@@ -39,9 +39,16 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 -- zen mode
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 
+-- alternative to `:w`, using `:up` and binding it to ZS: only saves the file if it has been changed
+vim.keymap.set("n", "ZS", ":up<CR>")
+
 -- computer science spiel
 vim.keymap.set("n", "<leader>i",
-  "i- [ ] **If this box is unchecked, these code examples have not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
+  "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
+
+-- highlight to current word, surround with **.
+-- requires vim-surround by tpope
+-- vim.keymap.set("n", "<leader>8", "ysiw*", { noremap = true })
 
 -- vanilla vim remaps for auto closing quotes and brackets
 -- to be used if https://github.com/Raimondi/delimitMate doesn't work'
