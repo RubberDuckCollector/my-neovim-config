@@ -70,7 +70,7 @@ vim.keymap.set("n", "<leader>i",
 -- 4: las
 
 -- SPANISH
--- vim.keymap.set("n", "1", "ithe ")
+-- vim.keymap.set("n", "1", "Ithe ")
 -- vim.keymap.set("i", "1", "<CR>the ")
 -- vim.keymap.set("n", "1", "_f|ael <Esc>")
 -- vim.keymap.set("n", "2", "_f|ala <Esc>")
