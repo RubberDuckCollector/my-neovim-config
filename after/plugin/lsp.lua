@@ -72,7 +72,7 @@ require('mason-lspconfig').setup({
     'pylsp',
     'omnisharp',
     'clangd',
-    'ruby_ls',
+    'ruby_lsp',
     'eslint',
     'gopls',
     'hls',
