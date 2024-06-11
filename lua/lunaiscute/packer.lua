@@ -81,6 +81,8 @@ return require('packer').startup(function(use)
   --   run = function() vim.fn["mkdp#util#install"]() end,
   -- })
 
+  use 'lfilho/cosco.vim'
+
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
@@ -96,6 +98,8 @@ return require('packer').startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
   }
+
+  use 'gleam-lang/gleam.vim'
 
   use 'andweeb/presence.nvim'
 

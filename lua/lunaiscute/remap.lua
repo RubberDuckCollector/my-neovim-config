@@ -19,6 +19,10 @@ vim.keymap.set("n", "<S-TAB>", "<<")
 vim.keymap.set("v", "<TAB>", ">gv")
 vim.keymap.set("v", "<S-TAB>", "<gv")
 
+-- this remap makes the current buffer executable
+-- used for bash files
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
@@ -42,9 +46,13 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
 -- alternative to `:w`, using `:up` and binding it to ZS: only saves the file if it has been changed
 vim.keymap.set("n", "ZS", ":up<CR>")
 
+-- cosco
+-- press <leader>; to put a semicolon or a comma at the end of the current line
+vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
+
 -- computer science spiel
-vim.keymap.set("n", "<leader>i",
-  "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
+-- vim.keymap.set("n", "<leader>i",
+--   "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
 
 -- highlight to current word, surround with **.
 -- requires vim-surround by tpope
@@ -80,6 +88,8 @@ vim.keymap.set("n", "<leader>i",
 -- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>")
 -- vim.keymap.set("n", "7", "_f|i (male)<Esc>")
 -- vim.keymap.set("n", "8", "_f|i (female)<Esc>")
+-- vim.keymap.set("n", "9", "_f|i (reflexive)<Esc>")
+-- vim.keymap.set("n", "0", "r><Esc>") -- réquiem
 
 -- GERMAN
 -- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>")
@@ -87,42 +97,3 @@ vim.keymap.set("n", "<leader>i",
 -- vim.keymap.set("n", "3", "_f|i (feminine)<Esc>")
 -- vim.keymap.set("n", "4", "_f|i (male)<Esc>")
 -- vim.keymap.set("n", "5", "_f|i (female)<Esc>")
-
--- vim.api.nvim_set_keymap('n', 'B', 'v:lua.B_function()', { expr = true, noremap = true, silent = true })
-
--- function _G.B_function()
---   local line = vim.api.nvim_get_current_line()
---   local col = vim.fn.col('.')
---   local substr = string.sub(line, 1, col - 1)
---   if string.match(substr, '^%s*$') then
---     return '0'
---   else
---     return 'B'
---   end
--- end
-
--- vim.api.nvim_set_keymap('n', 'b', 'v:lua.b_function()', { expr = true, noremap = true, silent = true })
-
--- function _G.b_function()
---   local line = vim.api.nvim_get_current_line()
---   local col = vim.fn.col('.')
---   local substr = string.sub(line, 1, col - 1)
---   if string.match(substr, '^%s*$') then
---     return '0'
---   else
---     return 'b'
---   end
--- end
-
--- vim.api.nvim_set_keymap('n', 'W', 'v:lua.W_function()', { expr = true, noremap = true, silent = true })
-
--- function _G.W_function()
---   local line = vim.api.nvim_get_current_line()
---   local col = vim.fn.col('.')
---   local substr = string.sub(line, col)
---   if string.match(substr, '^%s*$') then
---     return 'W'
---   else
---     return 'w'
---   end
--- end

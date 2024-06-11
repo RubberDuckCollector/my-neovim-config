@@ -9,7 +9,7 @@ vim.g.mapleader = " "
 -- which means the syntax highlighting you get when in table mode is slowing down a lot
 vim.g.table_mode_syntax = 0
 
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.relativenumber = true -- relative line numbers
 vim.opt.tabstop = 4
@@ -19,6 +19,7 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 -- vim.opt.smartindent = true
 vim.opt.smartindent = false
+vim.opt.colorcolumn = "80"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -43,11 +44,15 @@ vim.opt.foldlevel = 9 -- makes it so all folds are opened when file is opened, f
 vim.opt.foldenable = true
 vim.opt.splitbelow = true
 vim.opt.conceallevel = 0
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
 -- vim.opt.foldcolumn = "9" -- shows all folds in the left hand column to the left of where the numbers are
 vim.opt.history = 1000
 vim.opt.updatetime = 50
+
+-- spelling
+-- vim.opt.spelllang = 'es,en_gb'
+-- vim.opt.spell = true
 
 function Set_filetype_settings()
   local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
@@ -66,7 +71,12 @@ function Set_filetype_settings()
     vim.bo.softtabstop = 2
     vim.bo.shiftwidth = 2
   else
-    do
+    if filetype == "ruby" then
+      vim.bo.tabstop = 4
+      vim.bo.softtabstop = 4
+      vim.bo.shiftwidth = 4
+      -- elseif filetype == "markdown" or filetype == "txt" then
+      --   vim.opt.spell = true
     end
   end
 end
@@ -78,3 +88,14 @@ vim.cmd([[
     autocmd FileType * lua Set_filetype_settings()
   augroup END
 ]])
+
+-- highlight_yank
+vim.cmd([[
+  augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
+  augroup END
+]])
+
+-- cosco
+vim.g.cosco_filetype_whitelist = { "javascript", "typescript", "c", "cpp", "csharp", "rust" }
