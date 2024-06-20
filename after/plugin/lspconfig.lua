@@ -20,6 +20,7 @@ lspconfig.pylsp.setup({
 -- }
 lspconfig.ocamllsp.setup {}
 lspconfig.tsserver.setup {}
+lspconfig.clojure_lsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
 lspconfig.ruby_lsp.setup {}

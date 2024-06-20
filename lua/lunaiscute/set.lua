@@ -19,16 +19,44 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 -- vim.opt.smartindent = true
 vim.opt.smartindent = false
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
--- with these 2 settings, the cursor will always stay in the middle of the screen where possible.
--- I like this because it's great for readability when i'm writing long lines of documentation in .md files.
-vim.opt.scrolloff = 1000   -- cursor will stay 1000 lines from the bottom/top when scrolling down
+
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = "*.txt",
+--     callback = function()
+--         vim.cmd("setlocal scrolloff=1000")
+--     end
+-- })
+
+-- Set scrolloff to 1000 for .txt files
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--     pattern = "*.txt",
+--     callback = function()
+--         vim.cmd("setlocal scrolloff=1000")
+--     end
+-- })
+
+-- Set scrolloff to 8 for all other file types
+-- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+--     pattern = "*",
+--     callback = function()
+--         if vim.bo.filetype ~= "txt" then
+--             vim.opt_local.scrolloff = 8
+--         else
+--             vim.opt_local.scrolloff = 1000
+--         end
+--     end
+-- })
+
+-- vim.opt.scrolloff = 8
+vim.opt.scrolloff = 1000
+
 vim.opt.sidescrolloff = 12 -- cursor will stay 12 lines from the left/right when side-scrolling
 
 vim.opt.cmdheight = 2      -- more space in the neovim command line for displaying messages
@@ -55,30 +83,30 @@ vim.opt.updatetime = 50
 -- vim.opt.spell = true
 
 function Set_filetype_settings()
-  local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
-  local filetype = vim.bo.filetype
+    local concerned_files = { "lua", "c", "cpp", "rb", "haskell" }
+    local filetype = vim.bo.filetype
 
-  local found = false
-  for _, lang in ipairs(concerned_files) do
-    if lang == filetype then
-      found = true
-      break
+    local found = false
+    for _, lang in ipairs(concerned_files) do
+        if lang == filetype then
+            found = true
+            break
+        end
     end
-  end
 
-  if found then
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.shiftwidth = 2
-  else
-    if filetype == "ruby" then
-      vim.bo.tabstop = 4
-      vim.bo.softtabstop = 4
-      vim.bo.shiftwidth = 4
-      -- elseif filetype == "markdown" or filetype == "txt" then
-      --   vim.opt.spell = true
+    if found then
+        vim.bo.tabstop = 2
+        vim.bo.softtabstop = 2
+        vim.bo.shiftwidth = 2
+    else
+        if filetype == "ruby" then
+            vim.bo.tabstop = 4
+            vim.bo.softtabstop = 4
+            vim.bo.shiftwidth = 4
+            -- elseif filetype == "markdown" or filetype == "txt" then
+            --   vim.opt.spell = true
+        end
     end
-  end
 end
 
 -- Set autocmd for FileType event to trigger the function
