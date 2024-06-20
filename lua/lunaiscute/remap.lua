@@ -50,6 +50,27 @@ vim.keymap.set("n", "ZS", ":up<CR>")
 -- press <leader>; to put a semicolon or a comma at the end of the current line
 vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 
+-- go auto basic setup
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>jo<CR>func main() {}<Esc>i<CR><Esc>O",
+      { buffer = true })
+    vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
+  end
+})
+
+-- python auto basic setup
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "idef main():<CR>...<CR><CR><CR><BS>if __name__ == \"__main__\":<CR>main()<Esc>/def main<CR>jS",
+      { buffer = true })
+  end
+})
+
 -- computer science spiel
 -- vim.keymap.set("n", "<leader>i",
 --   "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
@@ -78,22 +99,23 @@ vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 -- 4: las
 
 -- SPANISH
--- vim.keymap.set("n", "1", "Ithe ")
--- vim.keymap.set("i", "1", "<CR>the ")
--- vim.keymap.set("n", "1", "_f|ael <Esc>")
--- vim.keymap.set("n", "2", "_f|ala <Esc>")
--- vim.keymap.set("n", "3", "_f|alos <Esc>")
--- vim.keymap.set("n", "4", "_f|alas <Esc>")
--- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>")
--- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>")
--- vim.keymap.set("n", "7", "_f|i (male)<Esc>")
--- vim.keymap.set("n", "8", "_f|i (female)<Esc>")
--- vim.keymap.set("n", "9", "_f|i (reflexive)<Esc>")
--- vim.keymap.set("n", "0", "r><Esc>") -- réquiem
+-- vim.keymap.set("n", "1", "Ithe ", { buffer = true })
+-- vim.keymap.set("i", "1", "<CR>the ", { buffer = true })
+-- vim.keymap.set("n", "1", "_f|ael <Esc>", { buffer = true })
+-- vim.keymap.set("n", "2", "_f|ala <Esc>", { buffer = true })
+-- vim.keymap.set("n", "3", "_f|alos <Esc>", { buffer = true })
+-- vim.keymap.set("n", "4", "_f|alas <Esc>", { buffer = true })
+-- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "8", "_f|i (female)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "9", "_f|i (reflexive)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "0", "r><Esc>", { buffer = true }) -- réquiem
+
 
 -- GERMAN
--- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>")
--- vim.keymap.set("n", "2", "_f|i (masculine)<Esc>")
--- vim.keymap.set("n", "3", "_f|i (feminine)<Esc>")
--- vim.keymap.set("n", "4", "_f|i (male)<Esc>")
--- vim.keymap.set("n", "5", "_f|i (female)<Esc>")
+-- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "8", "_f|i (female)<Esc>", { buffer = true })
