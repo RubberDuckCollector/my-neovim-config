@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
   callback = function()
     vim.keymap.set("n", "<leader>m",
-      "ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>jo<CR>func main() {}<Esc>i<CR><Esc>O",
+      "ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>Go<CR>func main() {}<Esc>i<CR><Esc>O",
       { buffer = true })
     vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
   end

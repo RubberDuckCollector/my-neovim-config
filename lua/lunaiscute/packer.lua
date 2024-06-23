@@ -17,14 +17,21 @@ return require('packer').startup(function(use)
     -- 'rose-pine/nvim',
     -- 'scottmckendry/cyberdream.nvim',
     -- 'alexmozaidze/palenight.nvim',
-    'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
+    -- 'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
+    'folke/tokyonight.nvim',
     -- 'navarasu/onedark.nvim',
     -- 'https://github.com/liuchengxu/space-vim-theme.git',
 
-    as = 'kanagawa',
+    -- as = 'kanagawa',
+    -- config = function()
+    --   style = 'wave'
+    --   vim.cmd('colorscheme kanagawa')
+    -- end
+
+    as = 'tokyonight',
     config = function()
-      style = 'wave'
-      vim.cmd('colorscheme kanagawa')
+      -- style = 'wave'
+      vim.cmd('colorscheme tokyonight')
     end
 
     -- as = 'space_vim_theme',

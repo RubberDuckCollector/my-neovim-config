@@ -19,11 +19,15 @@ lspconfig.pylsp.setup({
 --   }
 -- }
 lspconfig.ocamllsp.setup {}
+lspconfig.clangd.setup {}
+lspconfig.omnisharp.setup {}
+lspconfig.bashls.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.clojure_lsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}
-lspconfig.ruby_lsp.setup {}
+lspconfig.solargraph.setup {}
+lspconfig.zls.setup {}
 lspconfig.gleam.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
