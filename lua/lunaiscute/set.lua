@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 -- opts
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- nvim table mode
 -- this disables syntax highlighting when within table mode
@@ -63,7 +63,8 @@ vim.opt.cmdheight = 2      -- more space in the neovim command line for displayi
 vim.opt.wrap = false       -- no soft wrap
 
 -- search results highlight themselves reactively
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.opt.incsearch = true
 -- vim.opt.foldmethod = 'manual'
 vim.opt.foldmethod = "expr"

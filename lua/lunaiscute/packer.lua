@@ -17,22 +17,22 @@ return require('packer').startup(function(use)
     -- 'rose-pine/nvim',
     -- 'scottmckendry/cyberdream.nvim',
     -- 'alexmozaidze/palenight.nvim',
-    -- 'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
-    'folke/tokyonight.nvim',
+    'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
+    -- 'folke/tokyonight.nvim',
     -- 'navarasu/onedark.nvim',
     -- 'https://github.com/liuchengxu/space-vim-theme.git',
 
-    -- as = 'kanagawa',
-    -- config = function()
-    --   style = 'wave'
-    --   vim.cmd('colorscheme kanagawa')
-    -- end
-
-    as = 'tokyonight',
+    as = 'kanagawa',
     config = function()
-      -- style = 'wave'
-      vim.cmd('colorscheme tokyonight')
+      style = 'wave'
+      vim.cmd('colorscheme kanagawa')
     end
+
+    -- as = 'tokyonight',
+    -- config = function()
+    -- style = 'wave'
+    -- vim.cmd('colorscheme tokyonight')
+    -- end
 
     -- as = 'space_vim_theme',
     -- config = function()
@@ -109,6 +109,8 @@ return require('packer').startup(function(use)
   use 'gleam-lang/gleam.vim'
 
   use 'andweeb/presence.nvim'
+
+  use 'zerowidth/vim-copy-as-rtf'
 
   use {
     'VonHeikemen/lsp-zero.nvim',

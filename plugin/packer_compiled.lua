@@ -144,6 +144,12 @@ _G.packer_plugins = {
     path = "/Users/luna/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  kanagawa = {
+    config = { "\27LJ\2\nK\0\0\3\0\5\0\a'\0\0\0007\0\1\0006\0\2\0009\0\3\0'\2\4\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\nstyle\twave\0" },
+    loaded = true,
+    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/kanagawa",
+    url = "https://github.com/rebelot/kanagawa.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/luna/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -224,7 +230,7 @@ _G.packer_plugins = {
   },
   ["sudoku.nvim"] = {
     commands = { "Sudoku" },
-    config = { "\27LJ\2\nÕ\b\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\abg\f#843434\afg\nwhite\15set_number\1\0\2\bgui\vitalic\afg\nwhite\16same_number\1\0\2\bgui\tbold\afg\nwhite\22settings_disabled\1\0\2\bgui\vitalic\afg\f#8e8e8e\brow\1\0\2\afg\f#d5d5d5\abg\f#14151a\vcolumn\1\0\2\afg\f#d5d5d5\abg\f#14151a\vsquare\1\0\2\afg\nwhite\abg\f#292b35\14hint_cell\1\0\2\abg\vyellow\afg\nwhite\16active_menu\1\0\3\abg\nblack\bgui\tbold\afg\nwhite\vnumber\1\0\2\abg\nblack\afg\nwhite\nboard\1\0\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\3\21default_mappings\2\18persist_games\2\21persist_settings\2\nsetup\vsudoku\frequire\0" },
+    config = { "\27LJ\2\nÕ\b\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\afg\nwhite\abg\f#843434\15set_number\1\0\2\afg\nwhite\bgui\vitalic\16same_number\1\0\2\afg\nwhite\bgui\tbold\22settings_disabled\1\0\2\afg\f#8e8e8e\bgui\vitalic\brow\1\0\2\abg\f#14151a\afg\f#d5d5d5\vcolumn\1\0\2\abg\f#14151a\afg\f#d5d5d5\vsquare\1\0\2\abg\f#292b35\afg\nwhite\14hint_cell\1\0\2\afg\nwhite\abg\vyellow\16active_menu\1\0\3\abg\nblack\bgui\tbold\afg\nwhite\vnumber\1\0\2\afg\nwhite\abg\nblack\nboard\1\0\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\3\21default_mappings\2\21persist_settings\2\18persist_games\2\nsetup\vsudoku\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -235,12 +241,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/luna/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  tokyonight = {
-    config = { "\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\0" },
-    loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/tokyonight",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["twilight.nvim"] = {
     loaded = true,
@@ -266,6 +266,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
+  },
+  ["vim-copy-as-rtf"] = {
+    loaded = true,
+    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-copy-as-rtf",
+    url = "https://github.com/zerowidth/vim-copy-as-rtf"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -319,10 +324,10 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: tokyonight
-time([[Config for tokyonight]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme tokyonight\bcmd\bvim\0", "config", "tokyonight")
-time([[Config for tokyonight]], false)
+-- Config for: kanagawa
+time([[Config for kanagawa]], true)
+try_loadstring("\27LJ\2\nK\0\0\3\0\5\0\a'\0\0\0007\0\1\0006\0\2\0009\0\3\0'\2\4\0B\0\2\1K\0\1\0\25colorscheme kanagawa\bcmd\bvim\nstyle\twave\0", "config", "kanagawa")
+time([[Config for kanagawa]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

@@ -1,16 +1,16 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.pylsp.setup({
-  settings = {
-    pylsp = {
-      plugins = {
-        flake8 = {
-          extendIgnore = { "E501" }
-        }
-      }
-    }
-  }
-})
+-- lspconfig.pylsp.setup({
+--   settings = {
+--     pylsp = {
+--       plugins = {
+--         flake8 = {
+--           extendIgnore = { "E501" }
+--         }
+--       }
+--     }
+--   }
+-- })
 -- lspconfig.ltex.setup {
 --   settings = {
 --     ltex = {
@@ -18,6 +18,7 @@ lspconfig.pylsp.setup({
 --     }
 --   }
 -- }
+lspconfig.pyright.setup {}
 lspconfig.ocamllsp.setup {}
 lspconfig.clangd.setup {}
 lspconfig.omnisharp.setup {}

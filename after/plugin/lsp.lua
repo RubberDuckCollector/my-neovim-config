@@ -69,7 +69,8 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'tsserver',
     'rust_analyzer',
-    'pylsp',
+    -- 'pylsp',
+    'pyright',
     'omnisharp',
     'clangd',
     -- 'ruby_lsp',
