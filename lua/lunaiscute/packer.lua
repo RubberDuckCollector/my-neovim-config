@@ -90,6 +90,8 @@ return require('packer').startup(function(use)
 
   use 'lfilho/cosco.vim'
 
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
