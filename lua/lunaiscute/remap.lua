@@ -71,6 +71,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+-- c auto basic setup
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "c",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "i#include <stdio.h><CR><CR>int main() {}<Esc>i<CR><Esc>Oreturn 0;<Esc>O<Esc>O")
+  end
+})
+
 -- computer science spiel
 -- vim.keymap.set("n", "<leader>i",
 --   "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
@@ -115,7 +124,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- GERMAN
 vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
+vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
 vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
 vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
 vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
-vim.keymap.set("n", "8", "_f|i (female)<Esc>", { buffer = true })
+vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })

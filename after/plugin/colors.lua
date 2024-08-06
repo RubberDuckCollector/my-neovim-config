@@ -1,5 +1,6 @@
 function ColorMe()
   color = color or "kanagawa"
+  -- color = color or "catppuccin"
   -- color = color or "tokyonight"
   -- color = color or "space_vim_theme"
   vim.cmd.colorscheme(color)
@@ -9,6 +10,7 @@ function ColorMe()
 
   -- black text
   -- vim.api.nvim_set_hl(0, "Normal", { fg = "#000000" })
+  -- vim.api.nvim_set_hl(0, "Normal", { fg = "#222222" })
 
   -- this will remove the vim background to reveal the terminal background
   -- if the terminal background is opaque, the user will not see to the desktop

@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
     -- 'scottmckendry/cyberdream.nvim',
     -- 'alexmozaidze/palenight.nvim',
     'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
+    -- 'catppuccin/nvim',
     -- 'folke/tokyonight.nvim',
     -- 'navarasu/onedark.nvim',
     -- 'https://github.com/liuchengxu/space-vim-theme.git',
@@ -27,6 +28,12 @@ return require('packer').startup(function(use)
       style = 'wave'
       vim.cmd('colorscheme kanagawa')
     end
+
+    -- as = 'catppuccin',
+    -- config = function()
+    --   style = 'latte'
+    --   vim.cmd('colorscheme catppuccin-frappe')
+    -- end
 
     -- as = 'tokyonight',
     -- config = function()
@@ -62,7 +69,7 @@ return require('packer').startup(function(use)
   -- or make a tag e.g <p> and substitue the > with another >
   -- thus invoking nvim-ts-autotag but not invoking delimitMate
 
-  use 'dapt4/vim-autoSurround'              -- select the text with visual mode and press a button like , or (
+  -- use 'dapt4/vim-autoSurround'              -- select the text with visual mode and press a button like , or (
   use 'windwp/nvim-ts-autotag'
   use 'lukas-reineke/indent-blankline.nvim' -- :h ibl.config
   -- use 'junegunn/vim-easy-align'
@@ -109,6 +116,8 @@ return require('packer').startup(function(use)
   }
 
   use 'gleam-lang/gleam.vim'
+
+  use 'airblade/vim-gitgutter'
 
   use 'andweeb/presence.nvim'
 

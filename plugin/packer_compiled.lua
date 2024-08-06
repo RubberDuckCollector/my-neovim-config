@@ -235,7 +235,7 @@ _G.packer_plugins = {
   },
   ["sudoku.nvim"] = {
     commands = { "Sudoku" },
-    config = { "\27LJ\2\nÕ\b\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\abg\f#843434\afg\nwhite\15set_number\1\0\2\bgui\vitalic\afg\nwhite\16same_number\1\0\2\bgui\tbold\afg\nwhite\22settings_disabled\1\0\2\bgui\vitalic\afg\f#8e8e8e\brow\1\0\2\afg\f#d5d5d5\abg\f#14151a\vcolumn\1\0\2\afg\f#d5d5d5\abg\f#14151a\vsquare\1\0\2\afg\nwhite\abg\f#292b35\14hint_cell\1\0\2\abg\vyellow\afg\nwhite\16active_menu\1\0\3\bgui\tbold\afg\nwhite\abg\nblack\vnumber\1\0\2\abg\nblack\afg\nwhite\nboard\1\0\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\3\18persist_games\2\21persist_settings\2\21default_mappings\2\nsetup\vsudoku\frequire\0" },
+    config = { "\27LJ\2\nÕ\b\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\afg\nwhite\abg\f#843434\15set_number\1\0\2\afg\nwhite\bgui\vitalic\16same_number\1\0\2\afg\nwhite\bgui\tbold\22settings_disabled\1\0\2\afg\f#8e8e8e\bgui\vitalic\brow\1\0\2\abg\f#14151a\afg\f#d5d5d5\vcolumn\1\0\2\abg\f#14151a\afg\f#d5d5d5\vsquare\1\0\2\abg\f#292b35\afg\nwhite\14hint_cell\1\0\2\afg\nwhite\abg\vyellow\16active_menu\1\0\3\afg\nwhite\bgui\tbold\abg\nblack\vnumber\1\0\2\afg\nwhite\abg\nblack\nboard\1\0\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\3\18persist_games\2\21persist_settings\2\21default_mappings\2\nsetup\vsudoku\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -281,6 +281,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-gitgutter"] = {
+    loaded = true,
+    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-markdown-toc"] = {
     loaded = true,
