@@ -23,7 +23,7 @@ lspconfig.ocamllsp.setup {}
 lspconfig.clangd.setup {}
 lspconfig.omnisharp.setup {}
 lspconfig.bashls.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.clojure_lsp.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.gopls.setup {}

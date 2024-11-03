@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)                                            -- opens the file tree
+-- oil.nvim breaks netrw unless a setting is changed in the oil config
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)                                            -- opens the file tree
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")                                             -- moves selected text down a line
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")                                             -- moves selected text up a line
@@ -80,6 +81,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+-- oil.nvim
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- subject special keymaps
+
 -- computer science spiel
 -- vim.keymap.set("n", "<leader>i",
 --   "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
@@ -108,8 +114,8 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 4: las
 
 -- SPANISH
--- vim.keymap.set("n", "1", "Ithe ", { buffer = true })
 -- vim.keymap.set("i", "1", "<CR>the ", { buffer = true })
+-- vim.keymap.set("n", "1", "Ithe ", { buffer = true })
 -- vim.keymap.set("n", "1", "_f|ael <Esc>", { buffer = true })
 -- vim.keymap.set("n", "2", "_f|ala <Esc>", { buffer = true })
 -- vim.keymap.set("n", "3", "_f|alos <Esc>", { buffer = true })

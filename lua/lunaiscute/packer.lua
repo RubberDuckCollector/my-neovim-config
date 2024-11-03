@@ -81,6 +81,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-speeddating'
 
+  use 'stevearc/oil.nvim'
+
   -- markdown
   use 'dhruvasagar/vim-table-mode'
   use 'mzlogin/vim-markdown-toc'
