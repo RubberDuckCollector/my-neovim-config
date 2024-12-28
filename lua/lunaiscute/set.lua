@@ -75,39 +75,42 @@ vim.opt.splitbelow = true
 vim.opt.conceallevel = 0
 vim.opt.cursorline = false
 vim.opt.cursorcolumn = false
--- vim.opt.foldcolumn = "9" -- shows all folds in the left hand column to the left of where the numbers are
+-- vim.opt.foldcolumn = "2" -- shows all folds in the left hand column to the left of where the numbers are
 vim.opt.history = 1000
 vim.opt.updatetime = 50
+
+-- tinyinlinediagnostic.nvim
+vim.diagnostic.config({ virtual_text = false })
 
 -- spelling
 -- vim.opt.spelllang = 'es,en_gb'
 -- vim.opt.spell = true
 
 function Set_filetype_settings()
-	local concerned_files = { "lua", "c", "cpp", "ruby", "haskell" }
-	local filetype = vim.bo.filetype
+  local concerned_files = { "lua", "c", "cpp", "ruby", "haskell" }
+  local filetype = vim.bo.filetype
 
-	local found = false
-	for _, lang in ipairs(concerned_files) do
-		if lang == filetype then
-			found = true
-			break
-		end
-	end
+  local found = false
+  for _, lang in ipairs(concerned_files) do
+    if lang == filetype then
+      found = true
+      break
+    end
+  end
 
-	if found then
-		vim.bo.tabstop = 2
-		vim.bo.softtabstop = 2
-		vim.bo.shiftwidth = 2
-	else
-		if filetype == "ruby" then
-			vim.bo.tabstop = 4
-			vim.bo.softtabstop = 4
-			vim.bo.shiftwidth = 4
-			-- elseif filetype == "markdown" or filetype == "txt" then
-			--   vim.opt.spell = true
-		end
-	end
+  if found then
+    vim.bo.tabstop = 2
+    vim.bo.softtabstop = 2
+    vim.bo.shiftwidth = 2
+  else
+    if filetype == "ruby" then
+      vim.bo.tabstop = 4
+      vim.bo.softtabstop = 4
+      vim.bo.shiftwidth = 4
+      -- elseif filetype == "markdown" or filetype == "txt" then
+      --   vim.opt.spell = true
+    end
+  end
 end
 
 -- Set autocmd for FileType event to trigger the function
