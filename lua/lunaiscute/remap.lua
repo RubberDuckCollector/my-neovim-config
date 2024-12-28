@@ -53,36 +53,39 @@ vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 
 -- go auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "go",
-  callback = function()
-    vim.keymap.set("n", "<leader>m",
-      "ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>Go<CR>func main() {}<Esc>i<CR><Esc>O",
-      { buffer = true })
-    vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
-  end
+	pattern = "go",
+	callback = function()
+		vim.keymap.set("n", "<leader>m",
+			"ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>Go<CR>func main() {}<Esc>i<CR><Esc>O",
+			{ buffer = true })
+		vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
+	end
 })
 
 -- python auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "python",
-  callback = function()
-    vim.keymap.set("n", "<leader>m",
-      "idef main():<CR>...<CR><CR><CR><BS>if __name__ == \"__main__\":<CR>main()<Esc>/def main<CR>jS",
-      { buffer = true })
-  end
+	pattern = "python",
+	callback = function()
+		vim.keymap.set("n", "<leader>m",
+			"idef main():<CR>...<CR><CR><CR><BS>if __name__ == \"__main__\":<CR>main()<Esc>/def main<CR>jS",
+			{ buffer = true })
+	end
 })
 
 -- c auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "c",
-  callback = function()
-    vim.keymap.set("n", "<leader>m",
-      "i#include <stdio.h><CR><CR>int main() {}<Esc>i<CR><Esc>Oreturn 0;<Esc>O<Esc>O")
-  end
+	pattern = "c",
+	callback = function()
+		vim.keymap.set("n", "<leader>m",
+			"i#include <stdio.h><CR><CR>int main() {}<Esc>i<CR><Esc>Oreturn 0;<Esc>O<Esc>O")
+	end
 })
 
 -- oil.nvim
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- markview.nvim
+vim.keymap.set("n", "<leader>m", ":Markview<CR>")
 
 -- subject special keymaps
 
