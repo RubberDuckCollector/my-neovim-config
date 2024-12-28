@@ -17,23 +17,23 @@ return require('packer').startup(function(use)
     -- 'rose-pine/nvim',
     -- 'scottmckendry/cyberdream.nvim',
     -- 'alexmozaidze/palenight.nvim',
-    'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
-    -- 'catppuccin/nvim',
+    -- 'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
+    'catppuccin/nvim',
     -- 'folke/tokyonight.nvim',
     -- 'navarasu/onedark.nvim',
     -- 'https://github.com/liuchengxu/space-vim-theme.git',
 
-    as = 'kanagawa',
-    config = function()
-      style = 'wave'
-      vim.cmd('colorscheme kanagawa')
-    end
-
-    -- as = 'catppuccin',
+    -- as = 'kanagawa',
     -- config = function()
-    --   style = 'latte'
-    --   vim.cmd('colorscheme catppuccin-frappe')
+    --   style = 'wave'
+    --   vim.cmd('colorscheme kanagawa')
     -- end
+
+    as = 'catppuccin',
+    config = function()
+      style = 'latte'
+      vim.cmd('colorscheme catppuccin-macchiato')
+    end
 
     -- as = 'tokyonight',
     -- config = function()
@@ -81,13 +81,16 @@ return require('packer').startup(function(use)
   use 'tpope/vim-commentary'
   use 'tpope/vim-speeddating'
 
-  use 'stevearc/oil.nvim'
 
   -- markdown
   use 'dhruvasagar/vim-table-mode'
   use 'mzlogin/vim-markdown-toc'
   use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
+
+  use 'OXY2DEV/markview.nvim'
+
+
   -- use 'vim-pandoc/vim-pandoc-syntax'
 
   -- use 'preservim/vim-markdown'
@@ -97,7 +100,6 @@ return require('packer').startup(function(use)
   --   run = function() vim.fn["mkdp#util#install"]() end,
   -- })
 
-  use 'lfilho/cosco.vim'
 
   use 'nvim-treesitter/nvim-treesitter-context'
 
@@ -117,13 +119,21 @@ return require('packer').startup(function(use)
     'neovim/nvim-lspconfig',
   }
 
+  use 'meznaric/key-analyzer.nvim'
+
   use 'gleam-lang/gleam.vim'
+
+  use 'stevearc/oil.nvim'
+
+  use 'lfilho/cosco.vim'
 
   use 'airblade/vim-gitgutter'
 
   use 'andweeb/presence.nvim'
 
   use 'zerowidth/vim-copy-as-rtf'
+
+  -- use 'rachartier/tiny-inline-diagnostic.nvim'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
