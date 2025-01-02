@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
 
     as = 'catppuccin',
     config = function()
-      style = 'latte'
+      style = 'macchiato'
       vim.cmd('colorscheme catppuccin-macchiato')
     end
 
@@ -129,11 +129,13 @@ return require('packer').startup(function(use)
 
   use 'airblade/vim-gitgutter'
 
-  use 'andweeb/presence.nvim'
+  -- use 'andweeb/presence.nvim'
 
   use 'zerowidth/vim-copy-as-rtf'
 
   -- use 'rachartier/tiny-inline-diagnostic.nvim'
+  --
+  use 'dstein64/vim-startuptime'
 
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -159,9 +161,9 @@ return require('packer').startup(function(use)
   }
 
   -- GAMES
-  use({ 'theprimeagen/vim-be-good', lazy = false })
-  use({ 'alec-gibson/nvim-tetris', lazy = false })
-  use({ 'eandrju/cellular-automaton.nvim', lazy = false })
+  use({ 'theprimeagen/vim-be-good', lazy = true })
+  use({ 'alec-gibson/nvim-tetris', lazy = true })
+  use({ 'eandrju/cellular-automaton.nvim', lazy = true })
   use({
     'alanfortlink/blackjack.nvim',
     lazy = true,
@@ -170,11 +172,12 @@ return require('packer').startup(function(use)
     }
   })
 
-  use({ 'zyedidia/vim-snake', lazy = false })
+  use({ 'zyedidia/vim-snake', lazy = true })
 
 
   use({
     'jim-fx/sudoku.nvim',
+    lazy = true,
     cmd = "Sudoku",
     config = function()
       -- These are the defaults for the settings

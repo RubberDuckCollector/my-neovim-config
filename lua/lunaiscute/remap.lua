@@ -53,39 +53,45 @@ vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 
 -- go auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "go",
-	callback = function()
-		vim.keymap.set("n", "<leader>m",
-			"ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>Go<CR>func main() {}<Esc>i<CR><Esc>O",
-			{ buffer = true })
-		vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
-	end
+  pattern = "go",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "ipackage main<CR><CR>import ()<Esc>i<CR><TAB>\"fmt\"<CR><Esc>Go<CR>func main() {}<Esc>i<CR><Esc>O",
+      { buffer = true })
+    vim.keymap.set("n", "<leader>ee", "iif err != nil {}<Esc>i<CR><Esc>Vk=o")
+  end
 })
 
 -- python auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "python",
-	callback = function()
-		vim.keymap.set("n", "<leader>m",
-			"idef main():<CR>...<CR><CR><CR><BS>if __name__ == \"__main__\":<CR>main()<Esc>/def main<CR>jS",
-			{ buffer = true })
-	end
+  pattern = "python",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "idef main():<CR>...<CR><CR><CR><BS>if __name__ == \"__main__\":<CR>main()<Esc>/def main<CR>jS",
+      { buffer = true })
+  end
 })
 
 -- c auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "c",
-	callback = function()
-		vim.keymap.set("n", "<leader>m",
-			"i#include <stdio.h><CR><CR>int main() {}<Esc>i<CR><Esc>Oreturn 0;<Esc>O<Esc>O")
-	end
+  pattern = "c",
+  callback = function()
+    vim.keymap.set("n", "<leader>m",
+      "i#include <stdio.h><CR><CR>int main() {}<Esc>i<CR><Esc>Oreturn 0;<Esc>O<Esc>O", { buffer = true })
+  end
 })
 
 -- oil.nvim
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- markview.nvim
-vim.keymap.set("n", "<leader>m", ":Markview<CR>")
+-- by creating autocmds based on filetype, you can have the same keyboard shortcut behave differently based on the filetype
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.keymap.set("n", "<leader>m", "<CMD>Markview<CR>", { buffer = true })
+  end
+})
 
 -- subject special keymaps
 
@@ -132,10 +138,10 @@ vim.keymap.set("n", "<leader>m", ":Markview<CR>")
 
 
 -- GERMAN
-vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
-vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
-vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
-vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
-vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
-vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
-vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
+-- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
+-- vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
+-- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })

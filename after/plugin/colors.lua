@@ -16,8 +16,8 @@ function ColorMe()
   -- if the terminal background is opaque, the user will not see to the desktop
 
   -- vim.api.nvim_set_hl(0, "YankHighlight", { bg = "#ff73ea" })
-  -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-  -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+  vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
 print("color successful")
