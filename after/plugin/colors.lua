@@ -3,6 +3,7 @@ function ColorMe()
   color = color or "catppuccin"
   -- color = color or "tokyonight"
   -- color = color or "space_vim_theme"
+  -- color = color or "matrix"
   vim.cmd.colorscheme(color)
 
   -- test
@@ -20,5 +21,5 @@ function ColorMe()
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-print("color successful")
+-- print("color successful")
 ColorMe()

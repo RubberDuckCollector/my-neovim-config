@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
     -- 'alexmozaidze/palenight.nvim',
     -- 'rebelot/kanagawa.nvim', -- https://github.com/rebelot/kanagawa.nvim
     'catppuccin/nvim',
+    -- 'iruzo/matrix-nvim',
     -- 'folke/tokyonight.nvim',
     -- 'navarasu/onedark.nvim',
     -- 'https://github.com/liuchengxu/space-vim-theme.git',
@@ -31,9 +32,14 @@ return require('packer').startup(function(use)
 
     as = 'catppuccin',
     config = function()
-      style = 'macchiato'
+      flavour = 'macchiato'
       vim.cmd('colorscheme catppuccin-macchiato')
     end
+
+    -- as = 'matrix',
+    -- config = function()
+    --   vim.cmd('colorscheme matrix')
+    -- end
 
     -- as = 'tokyonight',
     -- config = function()
@@ -54,10 +60,10 @@ return require('packer').startup(function(use)
   }
   })
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+  -- use {
+  --   'nvim-lualine/lualine.nvim',
+  --   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  -- }
   use 'nvim-treesitter/playground'
   use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h
   use 'mbbill/undotree'      -- <leader>u
@@ -136,6 +142,8 @@ return require('packer').startup(function(use)
   -- use 'rachartier/tiny-inline-diagnostic.nvim'
   --
   use 'dstein64/vim-startuptime'
+
+  -- use { 'neoclide/coc.nvim', branch = "master", run = "npm ci" }
 
   use {
     'VonHeikemen/lsp-zero.nvim',

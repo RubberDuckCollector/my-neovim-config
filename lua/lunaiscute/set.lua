@@ -26,6 +26,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+vim.opt.mousescroll = "ver:1,hor:1"
 
 -- vim.api.nvim_create_autocmd("FileType", {
 --     pattern = "*.txt",
@@ -87,30 +88,30 @@ vim.diagnostic.config({ virtual_text = false })
 -- vim.opt.spell = true
 
 function Set_filetype_settings()
-    local concerned_files = { "lua", "c", "cpp", "ruby", "haskell" }
-    local filetype = vim.bo.filetype
+  local concerned_files = { "lua", "c", "cpp", "ruby", "haskell" }
+  local filetype = vim.bo.filetype
 
-    local found = false
-    for _, lang in ipairs(concerned_files) do
-        if lang == filetype then
-            found = true
-            break
-        end
+  local found = false
+  for _, lang in ipairs(concerned_files) do
+    if lang == filetype then
+      found = true
+      break
     end
+  end
 
-    if found then
-        vim.bo.tabstop = 2
-        vim.bo.softtabstop = 2
-        vim.bo.shiftwidth = 2
-    else
-        if filetype == "ruby" then
-            vim.bo.tabstop = 4
-            vim.bo.softtabstop = 4
-            vim.bo.shiftwidth = 4
-            -- elseif filetype == "markdown" or filetype == "txt" then
-            --   vim.opt.spell = true
-        end
+  if found then
+    vim.bo.tabstop = 2
+    vim.bo.softtabstop = 2
+    vim.bo.shiftwidth = 2
+  else
+    if filetype == "ruby" then
+      vim.bo.tabstop = 4
+      vim.bo.softtabstop = 4
+      vim.bo.shiftwidth = 4
+      -- elseif filetype == "markdown" or filetype == "txt" then
+      --   vim.opt.spell = true
     end
+  end
 end
 
 -- Set autocmd for FileType event to trigger the function

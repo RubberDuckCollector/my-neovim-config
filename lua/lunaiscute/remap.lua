@@ -49,7 +49,7 @@ vim.keymap.set("n", "ZS", ":up<CR>")
 
 -- cosco
 -- press <leader>; to put a semicolon or a comma at the end of the current line
-vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
+-- vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 
 -- go auto basic setup
 vim.api.nvim_create_autocmd("FileType", {
@@ -93,6 +93,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.keymap.set("n", "<leader>tmr", "<CMD>TableModeRealign<CR>", { buffer = true })
+  end
+})
+
 -- subject special keymaps
 
 -- computer science spiel
@@ -122,7 +129,7 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 3: los
 -- 4: las
 
--- SPANISH
+-- -- SPANISH
 -- vim.keymap.set("i", "1", "<CR>the ", { buffer = true })
 -- vim.keymap.set("n", "1", "Ithe ", { buffer = true })
 -- vim.keymap.set("n", "1", "_f|ael <Esc>", { buffer = true })
@@ -138,10 +145,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 -- GERMAN
--- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
--- vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
--- vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
--- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
--- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
--- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
--- vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
+vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
+vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
+vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
