@@ -30,6 +30,7 @@ lspconfig.gopls.setup {}
 lspconfig.solargraph.setup {}
 lspconfig.zls.setup {}
 lspconfig.gleam.setup {}
+lspconfig.texlab.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {

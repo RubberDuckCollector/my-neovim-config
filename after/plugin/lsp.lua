@@ -77,8 +77,9 @@ require('mason-lspconfig').setup({
     'solargraph',
     'eslint',
     'gopls',
-    'hls',
+    -- 'hls',
     'zls',
+    'texlab'
     -- 'ltex',
   },
 

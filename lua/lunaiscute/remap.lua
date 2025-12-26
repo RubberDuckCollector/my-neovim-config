@@ -145,10 +145,12 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 -- GERMAN
-vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
-vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
-vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
-vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
-vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
-vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
-vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
+-- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+-- -- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>")
+-- vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
+-- vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
+-- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+-- vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
+-- vim.keymap.set("n", "9", "_f|i (separable verb)<Esc>", { buffer = true })

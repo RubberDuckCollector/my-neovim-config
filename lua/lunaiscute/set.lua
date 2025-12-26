@@ -60,7 +60,7 @@ vim.opt.scrolloff = 1000
 
 vim.opt.sidescrolloff = 12 -- cursor will stay 12 lines from the left/right when side-scrolling
 
-vim.opt.cmdheight = 2      -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1      -- more space in the neovim command line for displaying messages
 vim.opt.wrap = false       -- no soft wrap
 
 -- search results highlight themselves reactively
@@ -70,6 +70,8 @@ vim.opt.incsearch = true
 -- vim.opt.foldmethod = 'manual'
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.treesitter.language.register('xml', { 'axaml', 'xaml' })
+vim.treesitter.language.register('xml', { 'xaml', 'axaml' })
 vim.opt.foldlevel = 9 -- makes it so all folds are opened when file is opened, folds are still able to be closed
 vim.opt.foldenable = true
 vim.opt.splitbelow = true
@@ -129,6 +131,13 @@ vim.cmd([[
     au TextYankPost * silent! lua vim.highlight.on_yank { higroup='IncSearch', timeout=200 }
   augroup END
 ]])
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.xaml", "*.axaml" },
+  callback = function()
+    vim.bo.filetype = "xml"
+  end,
+})
 
 -- cosco
 vim.g.cosco_filetype_whitelist = { "javascript", "typescript", "c", "cpp", "csharp", "rust" }
