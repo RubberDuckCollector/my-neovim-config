@@ -54,18 +54,18 @@ return require('packer').startup(function(use)
     -- end
   })
 
-  use({ 'nvim-treesitter/nvim-treesitter', {
-    run = ':TSUpdate',
-    indent = { enable = false },
-  }
+  use({
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate',
+    -- indent = { enable = false }, -- here from before the treesitter rewrite just in case it's needed
   })
 
   -- use {
   --   'nvim-lualine/lualine.nvim',
   --   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   -- }
-  use 'nvim-treesitter/playground'
-  use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h
+  use 'theprimeagen/harpoon' -- <leader>a and ctrl t/h/n
   use 'mbbill/undotree'      -- <leader>u
   use 'Vimjas/vim-python-pep8-indent'
   use 'Raimondi/delimitMate' -- auto completes '', "", (), etc and supports deletion of them
@@ -93,7 +93,6 @@ return require('packer').startup(function(use)
   use 'mzlogin/vim-markdown-toc'
   use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
-
   use 'OXY2DEV/markview.nvim'
 
 
@@ -135,11 +134,11 @@ return require('packer').startup(function(use)
 
   use 'airblade/vim-gitgutter'
 
-  -- use 'andweeb/presence.nvim'
+  use 'andweeb/presence.nvim'
 
-  use 'zerowidth/vim-copy-as-rtf'
+  -- use 'zerowidth/vim-copy-as-rtf' -- only works on mac
 
-  -- use 'rachartier/tiny-inline-diagnostic.nvim'
+  use 'rachartier/tiny-inline-diagnostic.nvim'
   --
   use 'dstein64/vim-startuptime'
 

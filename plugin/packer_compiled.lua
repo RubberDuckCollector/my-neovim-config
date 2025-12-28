@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/luna/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?.lua;/Users/luna/.cache/nvim/packer_hererocks/2.1.1736781742/share/lua/5.1/?/init.lua;/Users/luna/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?.lua;/Users/luna/.cache/nvim/packer_hererocks/2.1.1736781742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/luna/.cache/nvim/packer_hererocks/2.1.1736781742/lib/lua/5.1/?.so"
+local package_path_str = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/share/lua/5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/share/lua/5.1/?/init.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/luarocks/rocks-5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -76,254 +76,249 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["blackjack.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/blackjack.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/blackjack.nvim",
     url = "https://github.com/alanfortlink/blackjack.nvim"
   },
   catppuccin = {
     config = { "\27LJ\2\n^\0\0\3\0\5\0\a'\0\0\0007\0\1\0006\0\2\0009\0\3\0'\2\4\0B\0\2\1K\0\1\0%colorscheme catppuccin-macchiato\bcmd\bvim\fflavour\14macchiato\0" },
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/catppuccin",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
   ["cellular-automaton.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cellular-automaton.nvim",
     url = "https://github.com/eandrju/cellular-automaton.nvim"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-lua"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua",
     url = "https://github.com/hrsh7th/cmp-nvim-lua"
   },
   ["cmp-path"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cmp-path",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["cosco.vim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/cosco.vim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/cosco.vim",
     url = "https://github.com/lfilho/cosco.vim"
   },
   delimitMate = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/delimitMate",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/delimitMate",
     url = "https://github.com/Raimondi/delimitMate"
   },
   ["friendly-snippets"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gleam.vim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/gleam.vim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/gleam.vim",
     url = "https://github.com/gleam-lang/gleam.vim"
   },
   harpoon = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/harpoon",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["key-analyzer.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/key-analyzer.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/key-analyzer.nvim",
     url = "https://github.com/meznaric/key-analyzer.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["markdown-preview.nvim"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["markview.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/markview.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/markview.nvim",
     url = "https://github.com/OXY2DEV/markview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tetris"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-tetris",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-tetris",
     url = "https://github.com/alec-gibson/nvim-tetris"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
   ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["oil.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/oil.nvim",
     url = "https://github.com/stevearc/oil.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  playground = {
-    loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["sudoku.nvim"] = {
     commands = { "Sudoku" },
-    config = { "\27LJ\2\ná\t\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\abg\f#843434\afg\nwhite\15set_number\1\0\2\bgui\vitalic\afg\nwhite\16same_number\1\0\2\bgui\tbold\afg\nwhite\22settings_disabled\1\0\2\bgui\vitalic\afg\f#8e8e8e\brow\1\0\2\abg\f#14151a\afg\f#d5d5d5\vcolumn\1\0\2\abg\f#14151a\afg\f#d5d5d5\vsquare\1\0\2\abg\f#292b35\afg\nwhite\14hint_cell\1\0\2\abg\vyellow\afg\nwhite\16active_menu\1\0\3\abg\nblack\afg\nwhite\bgui\tbold\vnumber\1\0\2\abg\nblack\afg\nwhite\nboard\1\0\v\14hint_cell\0\vnumber\0\16active_menu\0\16same_number\0\nboard\0\nerror\0\brow\0\vcolumn\0\15set_number\0\vsquare\0\22settings_disabled\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\5\21default_mappings\2\18persist_games\2\21persist_settings\2\rmappings\0\22custom_highlights\0\nsetup\vsudoku\frequire\0" },
+    config = { "\27LJ\2\ná\t\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\afg\nwhite\abg\f#843434\15set_number\1\0\2\afg\nwhite\bgui\vitalic\16same_number\1\0\2\afg\nwhite\bgui\tbold\22settings_disabled\1\0\2\afg\f#8e8e8e\bgui\vitalic\brow\1\0\2\abg\f#14151a\afg\f#d5d5d5\vcolumn\1\0\2\abg\f#14151a\afg\f#d5d5d5\vsquare\1\0\2\abg\f#292b35\afg\nwhite\14hint_cell\1\0\2\afg\nwhite\abg\vyellow\16active_menu\1\0\3\abg\nblack\bgui\tbold\afg\nwhite\vnumber\1\0\2\afg\nwhite\abg\nblack\nboard\1\0\v\vcolumn\0\15set_number\0\vnumber\0\16same_number\0\22settings_disabled\0\nerror\0\14hint_cell\0\vsquare\0\16active_menu\0\nboard\0\brow\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\bkey\6-\vaction\14decrement\1\0\2\bkey\6+\vaction\14increment\1\0\2\bkey\n<C-r>\vaction\tredo\1\0\2\bkey\6u\vaction\tundo\1\0\2\bkey\agh\vaction\14view=help\1\0\2\bkey\agz\vaction\rview=zen\1\0\2\bkey\agt\vaction\rview=tip\1\0\2\bkey\ags\vaction\18view=settings\1\0\2\bkey\agr\vaction\15reset_game\1\0\2\bkey\agn\vaction\rnew_game\1\0\2\bkey\ar9\vaction\rinsert=9\1\0\2\bkey\ar3\vaction\rinsert=3\1\0\2\bkey\ar2\vaction\rinsert=2\1\0\2\bkey\ar1\vaction\rinsert=1\1\0\2\bkey\6x\vaction\15clear_cell\1\0\5\rmappings\0\21default_mappings\2\22custom_highlights\0\18persist_games\2\21persist_settings\2\nsetup\vsudoku\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/opt/sudoku.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/opt/sudoku.nvim",
     url = "https://github.com/jim-fx/sudoku.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["twilight.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/twilight.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
   undotree = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/undotree",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
   ["vim-be-good"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-be-good",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/theprimeagen/vim-be-good"
   },
   ["vim-commentary"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
   ["vim-copy-as-rtf"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-copy-as-rtf",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-copy-as-rtf",
     url = "https://github.com/zerowidth/vim-copy-as-rtf"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-gitgutter"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
   },
   ["vim-markdown-toc"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-markdown-toc",
     url = "https://github.com/mzlogin/vim-markdown-toc"
   },
   ["vim-python-pep8-indent"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
     url = "https://github.com/Vimjas/vim-python-pep8-indent"
   },
   ["vim-repeat"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-repeat",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
   },
   ["vim-snake"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-snake",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-snake",
     url = "https://github.com/zyedidia/vim-snake"
   },
   ["vim-speeddating"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-speeddating",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-speeddating",
     url = "https://github.com/tpope/vim-speeddating"
   },
   ["vim-startuptime"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-startuptime",
     url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-surround",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["vim-table-mode"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/vim-table-mode",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/vim-table-mode",
     url = "https://github.com/dhruvasagar/vim-table-mode"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
-    path = "/Users/luna/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/zen-mode.nvim",
     url = "https://github.com/folke/zen-mode.nvim"
   }
 }

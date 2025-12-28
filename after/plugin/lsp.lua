@@ -74,7 +74,7 @@ require('mason-lspconfig').setup({
     'omnisharp',
     'clangd',
     -- 'ruby_lsp',
-    'solargraph',
+    -- 'solargraph',
     'eslint',
     'gopls',
     -- 'hls',
