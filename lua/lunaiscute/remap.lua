@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- oil.nvim
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", "<CMD>Ex<CR>", { desc = "Open parent directory" })
 
 -- markview.nvim
 -- by creating autocmds based on filetype, you can have the same keyboard shortcut behave differently based on the filetype
