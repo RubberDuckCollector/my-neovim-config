@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 
 -- oil.nvim breaks netrw unless a setting is changed in the oil config
--- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)                                            -- opens the file tree
 
+vim.keymap.set("n", "-", "<CMD>Ex<CR>", { desc = "Open parent directory" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")                                             -- moves selected text down a line
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")                                             -- moves selected text up a line
 vim.keymap.set("n", "J", "mzJ`z")                                                        -- makes it so the cursor stays in the same place when appending the below line to current line
@@ -81,8 +81,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- oil.nvim
-vim.keymap.set("n", "-", "<CMD>Ex<CR>", { desc = "Open parent directory" })
 
 -- markview.nvim
 -- by creating autocmds based on filetype, you can have the same keyboard shortcut behave differently based on the filetype
@@ -99,6 +97,31 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.keymap.set("n", "<leader>tmr", "<CMD>TableModeRealign<CR>", { buffer = true })
   end
 })
+
+-- https://vi.stackexchange.com/questions/7890/how-to-display-line-numbers-in-netrw-v125-vim7-0
+-- function! NumberExplore()
+--    if (expand('%') != '')
+--       cd %
+--    endif
+--    call netrw#LocalBrowseCheck(expand('%:p:h:h'))
+--    set number
+-- endfunction
+
+-- function! NumberInspect()
+--    if (expand('%') != '')
+--       cd %
+--    endif
+--    let file = getline('.')
+--    " Get line that cursor is on
+--    if (file =~ '/$')
+--       " If the line ends in a / then treat it like a directory
+--       exec "call netrw#LocalBrowseCheck('" . fnamemodify(file, ":p"). "')"
+--    else
+--       " If the line doesn't end in a / then treat it like a file
+--       exec "edit ". fnamemodify(file, ":p")
+--    endif
+--    set number
+-- endfunction
 
 -- subject special keymaps
 
