@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.5',
-    -- or                            , branch = '0.1.x',
+    -- or, branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -93,7 +93,7 @@ return require('packer').startup(function(use)
   use 'mzlogin/vim-markdown-toc'
   use 'folke/zen-mode.nvim'
   use 'folke/twilight.nvim'
-  use 'OXY2DEV/markview.nvim'
+  -- use 'OXY2DEV/markview.nvim'
 
 
   -- use 'vim-pandoc/vim-pandoc-syntax'

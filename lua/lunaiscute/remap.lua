@@ -88,6 +88,7 @@ vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
     vim.keymap.set("n", "<leader>m", "<CMD>Markview<CR>", { buffer = true })
+    vim.keymap.set("n", "<C-p>", "<CMD>MarkdownPreviewToggle<CR>", { buffer = true })
   end
 })
 
