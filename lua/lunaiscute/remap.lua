@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 -- oil.nvim breaks netrw unless a setting is changed in the oil config
 
-vim.keymap.set("n", "-", "<CMD>Ex<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "-", ":Oil<CR>", { desc = "Open parent directory" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")                                             -- moves selected text down a line
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")                                             -- moves selected text up a line
 vim.keymap.set("n", "J", "mzJ`z")                                                        -- makes it so the cursor stays in the same place when appending the below line to current line

@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/share/lua/5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/share/lua/5.1/?/init.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/luarocks/rocks-5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1765228720/lib/lua/5.1/?.so"
+local package_path_str = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1741730670/share/lua/5.1/?/init.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?.lua;/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1741730670/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/eingabeaufforderung/.cache/nvim/packer_hererocks/2.1.1741730670/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -207,6 +207,11 @@ _G.packer_plugins = {
     path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
     url = "https://github.com/windwp/nvim-ts-autotag"
   },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/eingabeaufforderung/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -224,7 +229,7 @@ _G.packer_plugins = {
   },
   ["sudoku.nvim"] = {
     commands = { "Sudoku" },
-    config = { "\27LJ\2\ná\t\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\abg\f#843434\afg\nwhite\15set_number\1\0\2\bgui\vitalic\afg\nwhite\16same_number\1\0\2\bgui\tbold\afg\nwhite\22settings_disabled\1\0\2\bgui\vitalic\afg\f#8e8e8e\brow\1\0\2\afg\f#d5d5d5\abg\f#14151a\vcolumn\1\0\2\afg\f#d5d5d5\abg\f#14151a\vsquare\1\0\2\afg\nwhite\abg\f#292b35\14hint_cell\1\0\2\abg\vyellow\afg\nwhite\16active_menu\1\0\3\abg\nblack\afg\nwhite\bgui\tbold\vnumber\1\0\2\abg\nblack\afg\nwhite\nboard\1\0\v\nboard\0\vsquare\0\vnumber\0\15set_number\0\16same_number\0\vcolumn\0\22settings_disabled\0\nerror\0\brow\0\14hint_cell\0\16active_menu\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\vaction\14decrement\bkey\6-\1\0\2\vaction\14increment\bkey\6+\1\0\2\vaction\tredo\bkey\n<C-r>\1\0\2\vaction\tundo\bkey\6u\1\0\2\vaction\14view=help\bkey\agh\1\0\2\vaction\rview=zen\bkey\agz\1\0\2\vaction\rview=tip\bkey\agt\1\0\2\vaction\18view=settings\bkey\ags\1\0\2\vaction\15reset_game\bkey\agr\1\0\2\vaction\rnew_game\bkey\agn\1\0\2\vaction\rinsert=9\bkey\ar9\1\0\2\vaction\rinsert=3\bkey\ar3\1\0\2\vaction\rinsert=2\bkey\ar2\1\0\2\vaction\rinsert=1\bkey\ar1\1\0\2\vaction\15clear_cell\bkey\6x\1\0\5\rmappings\0\22custom_highlights\0\21default_mappings\2\18persist_games\2\21persist_settings\2\nsetup\vsudoku\frequire\0" },
+    config = { "\27LJ\2\ná\t\0\0\5\0,\0?6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\16\0005\4\4\0>\4\1\0035\4\5\0>\4\2\0035\4\6\0>\4\3\0035\4\a\0>\4\4\0035\4\b\0>\4\5\0035\4\t\0>\4\6\0035\4\n\0>\4\a\0035\4\v\0>\4\b\0035\4\f\0>\4\t\0035\4\r\0>\4\n\0035\4\14\0>\4\v\0035\4\15\0>\4\f\0035\4\16\0>\4\r\0035\4\17\0>\4\14\0035\4\18\0>\4\15\3=\3\19\0025\3\21\0005\4\20\0=\4\22\0035\4\23\0=\4\24\0035\4\25\0=\4\26\0035\4\27\0=\4\28\0035\4\29\0=\4\30\0035\4\31\0=\4 \0035\4!\0=\4\"\0035\4#\0=\4$\0035\4%\0=\4&\0035\4'\0=\4(\0035\4)\0=\4*\3=\3+\2B\0\2\1K\0\1\0\22custom_highlights\nerror\1\0\2\abg\f#843434\afg\nwhite\15set_number\1\0\2\bgui\vitalic\afg\nwhite\16same_number\1\0\2\bgui\tbold\afg\nwhite\22settings_disabled\1\0\2\bgui\vitalic\afg\f#8e8e8e\brow\1\0\2\abg\f#14151a\afg\f#d5d5d5\vcolumn\1\0\2\abg\f#14151a\afg\f#d5d5d5\vsquare\1\0\2\abg\f#292b35\afg\nwhite\14hint_cell\1\0\2\abg\vyellow\afg\nwhite\16active_menu\1\0\3\abg\nblack\afg\nwhite\bgui\tbold\vnumber\1\0\2\abg\nblack\afg\nwhite\nboard\1\0\v\22settings_disabled\0\vnumber\0\nboard\0\16same_number\0\nerror\0\vsquare\0\vcolumn\0\14hint_cell\0\15set_number\0\16active_menu\0\brow\0\1\0\1\afg\f#7d7d7d\rmappings\1\0\2\vaction\14decrement\bkey\6-\1\0\2\vaction\14increment\bkey\6+\1\0\2\vaction\tredo\bkey\n<C-r>\1\0\2\vaction\tundo\bkey\6u\1\0\2\vaction\14view=help\bkey\agh\1\0\2\vaction\rview=zen\bkey\agz\1\0\2\vaction\rview=tip\bkey\agt\1\0\2\vaction\18view=settings\bkey\ags\1\0\2\vaction\15reset_game\bkey\agr\1\0\2\vaction\rnew_game\bkey\agn\1\0\2\vaction\rinsert=9\bkey\ar9\1\0\2\vaction\rinsert=3\bkey\ar3\1\0\2\vaction\rinsert=2\bkey\ar2\1\0\2\vaction\rinsert=1\bkey\ar1\1\0\2\vaction\15clear_cell\bkey\6x\1\0\5\rmappings\0\22custom_highlights\0\18persist_games\2\21persist_settings\2\21default_mappings\2\nsetup\vsudoku\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,

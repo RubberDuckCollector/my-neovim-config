@@ -1,14 +1,16 @@
-vim.lsp.enable('clangd')
-vim.lsp.enable('pyright')
-vim.lsp.enable('ocamllsp')
-vim.lsp.enable('omnisharp')
-vim.lsp.enable('bashls')
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('clojure_lsp')
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('gopls')
-vim.lsp.enable('solargraph')
-vim.lsp.enable('zls')
-vim.lsp.enable('gleam')
-vim.lsp.enable('texlab')
-vim.lsp.enable('rust_analyzer')
+vim.lsp.enable({
+  "clangd",
+  "pyright",
+  "ocamllsp",
+  "omnisharp",
+  "bashls",
+  "ts_ls",
+  "clojure_lsp",
+  "lua_ls",
+  "gopls",
+  "solargraph",
+  "zls",
+  "gleam",
+  "texlab",
+  "rust_analyzer"
+})

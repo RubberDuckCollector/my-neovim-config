@@ -128,7 +128,7 @@ return require('packer').startup(function(use)
 
   use 'gleam-lang/gleam.vim'
 
-  -- use 'stevearc/oil.nvim'
+  use 'stevearc/oil.nvim'
 
   use 'lfilho/cosco.vim'
 
