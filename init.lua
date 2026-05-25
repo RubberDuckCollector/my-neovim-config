@@ -390,15 +390,15 @@ do
   -- vim.keymap.set("n", "0", "r><Esc>", { buffer = true }) -- réquiem
 
 
-  -- GERMAN
-  vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
-  vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
-  vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
-  vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
-  vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
-  vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
-  vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
-  vim.keymap.set("n", "9", "_f|i (separable verb)<Esc>", { buffer = true })
+  -- -- GERMAN
+  -- vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
+  -- vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
+  -- vim.keymap.set("n", "3", "$F-x") -- deletet the - in the brackets where the plural ending is
+  -- vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
+  -- vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
+  -- vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
+  -- vim.keymap.set("n", "8", "_f|i (female)<Esc>fdcwdie<Esc>", { buffer = true })
+  -- vim.keymap.set("n", "9", "_f|i (separable verb)<Esc>", { buffer = true })
 
 end
 
@@ -515,6 +515,55 @@ do
       topdelete = { text = '‾' }, ---@diagnostic disable-line: missing-fields
       changedelete = { text = '~' }, ---@diagnostic disable-line: missing-fields
     },
+    on_attach = function(bufnr)
+      local gitsigns = require 'gitsigns'
+
+      local function map(mode, l, r, opts)
+        opts = opts or {}
+        opts.buffer = bufnr
+        vim.keymap.set(mode, l, r, opts)
+      end
+
+      -- Navigation
+      map('n', ']c', function()
+        if vim.wo.diff then
+          vim.cmd.normal { ']c', bang = true }
+        else
+          gitsigns.nav_hunk 'next'
+        end
+      end, { desc = 'Jump to next git [c]hange' })
+
+      map('n', '[c', function()
+        if vim.wo.diff then
+          vim.cmd.normal { '[c', bang = true }
+        else
+          gitsigns.nav_hunk 'prev'
+        end
+      end, { desc = 'Jump to previous git [c]hange' })
+
+      -- Actions
+      -- visual mode
+      map('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = 'git [s]tage hunk' })
+      map('v', '<leader>hr', function() gitsigns.reset_hunk { vim.fn.line '.', vim.fn.line 'v' } end, { desc = 'git [r]eset hunk' })
+      -- normal mode
+      map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
+      map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
+      map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
+      map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
+      map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
+      map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = 'git preview hunk [i]nline' })
+      map('n', '<leader>hb', function() gitsigns.blame_line { full = true } end, { desc = 'git [b]lame line' })
+      map('n', '<leader>hd', gitsigns.diffthis, { desc = 'git [d]iff against index' })
+      map('n', '<leader>hD', function() gitsigns.diffthis '@' end, { desc = 'git [D]iff against last commit' })
+      map('n', '<leader>hQ', function() gitsigns.setqflist 'all' end, { desc = 'git hunk [Q]uickfix list (all files in repo)' })
+      map('n', '<leader>hq', gitsigns.setqflist, { desc = 'git hunk [q]uickfix list (all changes in this file)' })
+      -- Toggles
+      map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
+      map('n', '<leader>tw', gitsigns.toggle_word_diff, { desc = '[T]oggle git intra-line [w]ord diff' })
+
+      -- Text object
+      map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
+    end,
   }
 
   -- Useful plugin to show you pending keybinds.
@@ -538,6 +587,7 @@ do
   -- change the command under that to load whatever the name of that colorscheme is.
   --
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+
   vim.pack.add { gh 'ribru17/bamboo.nvim' }
   ---@diagnostic disable-next-line: missing-fields
   require('bamboo').setup {
@@ -613,17 +663,32 @@ do
   vim.keymap.set('n', '<leader>vo', '<cmd>Love output<cr>', { desc = 'Output panel' })
 
   vim.pack.add { gh 'yousefhadder/markdown-plus.nvim' }
+  require("markdown-plus").setup({})
+
+  -- vim.pack.add { gh 'tadmccorkle/markdown.nvim' }
+  -- require('markdown').setup({
+  --   mappings = {},
+  --   inline_surround = {},
+  --   toc = {},
+  --   hooks = {
+  --     -- Called when following links. Provided the following options:
+  --     -- * 'dest' (string): the link destination
+  --     -- * 'use_default_app' (boolean|nil): whether to open the destination with default application
+  --     --   (refer to documentation on <Plug> mappings for explanation of when this option is used)
+  --     follow_link = nil,
+  --   },
+  -- })
+
   vim.pack.add { gh 'chomosuke/typst-preview.nvim' }
   -- vim.pack.add { gh 'junegunn/seoul256.vim' }
   -- vim.pack.add { gh 'rebelot/kanagawa.nvim' }
-  vim.pack.add({ "htps://github.com/navarasu/onedark.nvim", })
+  vim.pack.add({ gh 'navarasu/onedark.nvim', })
   require('onedark').setup { style = 'darker' }
   require('onedark').load()
-  -- vim.pack.add { gh 'airblade/gitgutter' }
   vim.pack.add { gh 'alanfortlink/blackjack.nvim' }
   vim.pack.add { gh 'dhruvasagar/vim-table-mode' }
   vim.pack.add { gh 'lukas-reineke/indent-blankline.nvim' }
-  -- return 'ibl'.setup{}
+  -- return 'ibl'.setup({})
   vim.pack.add { gh 'mzlogin/vim-markdown-toc' }
   vim.pack.add { gh 'mbbill/undotree' }
   vim.pack.add { gh 'iamcco/markdown-preview.nvim' }
