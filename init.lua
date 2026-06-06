@@ -169,21 +169,6 @@ do
 
   vim.o.mousescroll = "ver:1,hor:1"
 
-  -- vim.api.nvim_create_autocmd("FileType", {
-  --     pattern = "*.txt",
-  --     callback = function()
-  --         vim.cmd("setlocal scrolloff=1000")
-  --     end
-  -- })
-
-  -- Set scrolloff to 1000 for .txt files
-  -- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  --     pattern = "*.txt",
-  --     callback = function()
-  --         vim.cmd("setlocal scrolloff=1000")
-  --     end
-  -- })
-
   -- Set scrolloff to 8 for all other file types
   -- vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   --     pattern = "*",
@@ -273,11 +258,6 @@ do
   -- 3: los
   -- 4: las
 
-  -- TODO: make it so only one language can be enabled at any given time
-  -- maybe add all languages into table A and copy the active one into variable B,
-  -- then when a new language is enabled, see if B is in A,
-  -- then disable B and enable whatever the argument is
-
   local german_enabled = false
   local spanish_enabled = false
   local languages = { "Spanish", "German" }
@@ -316,8 +296,8 @@ do
       if german_enabled == false then
         german_enabled = true
         vim.keymap.set("n", "1", "_f|i (reflexive)<Esc>", { buffer = true })
-        vim.keymap.set("n", "2", "$F x") -- delete space in between the end of the noun and the ( for the plural ending
-        vim.keymap.set("n", "3", "$F-x") -- delete the - in the brackets where the plural ending is
+        vim.keymap.set("n", "2", "$F x", { buffer = true }) -- delete space in between the end of the noun and the ( for the plural ending
+        vim.keymap.set("n", "3", "$F-x", { buffer = true }) -- delete the - in the brackets where the plural ending is
         vim.keymap.set("n", "5", "_f|i (masculine)<Esc>", { buffer = true })
         vim.keymap.set("n", "6", "_f|i (feminine)<Esc>", { buffer = true })
         vim.keymap.set("n", "7", "_f|i (male)<Esc>", { buffer = true })
@@ -326,14 +306,14 @@ do
         print("German keymaps on")
       else -- if german is already enabled, disable it to complete the toggle functionality
         german_enabled = false
-        vim.keymap.del({ "n" }, "1")
-        vim.keymap.del({ "n" }, "2") -- delete space in between the end of the noun and the ( for the plural ending
-        vim.keymap.del({ "n" }, "3") -- deletet the - in the brackets where the plural ending is
-        vim.keymap.del({ "n" }, "5")
-        vim.keymap.del({ "n" }, "6")
-        vim.keymap.del({ "n" }, "7")
-        vim.keymap.del({ "n" }, "8")
-        vim.keymap.del({ "n" }, "9")
+        vim.keymap.del({ "n" }, "1", { buffer = true })
+        vim.keymap.del({ "n" }, "2", { buffer = true })
+        vim.keymap.del({ "n" }, "3", { buffer = true })
+        vim.keymap.del({ "n" }, "5", { buffer = true })
+        vim.keymap.del({ "n" }, "6", { buffer = true })
+        vim.keymap.del({ "n" }, "7", { buffer = true })
+        vim.keymap.del({ "n" }, "8", { buffer = true })
+        vim.keymap.del({ "n" }, "9", { buffer = true })
         print("German keymaps off")
       end
     else
@@ -386,15 +366,8 @@ do
   vim.keymap.set("v", "<leader>y", '"+y')
   vim.keymap.set("n", "<leader>Y", '"+Y')
 
-  -- zen mode
-  vim.keymap.set("n", "<leader>z", ":ZenMode<CR>")
-
   -- alternative to `:w`, using `:up` and binding it to ZS: only saves the file if it has been changed
   vim.keymap.set("n", "ZS", ":up<CR>")
-
-  -- cosco
-  -- press <leader>; to put a semicolon or a comma at the end of the current line
-  -- vim.keymap.set("n", "<leader>;", ":CommaOrSemiColon<CR>")
 
   -- go auto basic setup
   vim.api.nvim_create_autocmd("FileType", {
@@ -475,10 +448,6 @@ do
   })
 
   -- subject special keymaps
-
-  -- computer science spiel
-  -- vim.keymap.set("n", "<leader>i",
-  --   "i- [ ] **If this box is unchecked, this file has not been fact checked by a teacher. If you're a teacher familiar with OCR H446, submit a pull request or email me! <eggsim49@gmail.com>**<Esc>j0")
 
   -- highlight to current word, surround with **.
   -- requires vim-surround by tpope
