@@ -823,7 +823,7 @@ do
   -- toggle keymappings for venn using <leader>v
   vim.api.nvim_set_keymap("n", "<leader>v", ":lua Toggle_venn()<CR>", { noremap = true })
 
-  -- vim.pack.add { gh 'saghen/filler-begone.nvim' }
+  vim.pack.add { gh 'saghen/filler-begone.nvim' }
 
   -- Simple and easy statusline.
   --  You could remove this setup call if you don't like it,
@@ -1318,7 +1318,7 @@ do
     -- the rust implementation via `'prefer_rust_with_warning'`
     --
     -- See `:help blink-cmp-config-fuzzy` for more information
-    fuzzy = { implementation = "lua" },
+    fuzzy = { implementation = "rust" },
 
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },
