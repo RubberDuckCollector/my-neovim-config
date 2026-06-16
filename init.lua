@@ -232,17 +232,21 @@ do
   vim.keymap.set("n", "H", "^")
   vim.keymap.set("n", "L", "$")
 
+  function make_transparent()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
+    print("Transparency enabled")
+  end
+
   local transparent = false
 
   vim.api.nvim_create_user_command("ToggleOpacity", function()
     transparent = not transparent
 
     if transparent then
-      vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
-      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
-      print("Transparency enabled")
+      make_transparent()
     else
       vim.cmd.colorscheme(vim.g.colors_name)
       print("Transparency disabled")
@@ -789,6 +793,7 @@ do
   vim.pack.add({ gh("navarasu/onedark.nvim") })
   require("onedark").setup({ style = "darker" })
   require("onedark").load()
+  make_transparent() -- have to make nvim transparent after loading the colorscheme
   vim.pack.add({ gh("alanfortlink/blackjack.nvim") })
   vim.pack.add({ gh("dhruvasagar/vim-table-mode") })
   -- vim.pack.add { gh 'lukas-reineke/indent-blankline.nvim' }
