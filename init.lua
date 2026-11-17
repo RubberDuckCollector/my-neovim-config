@@ -183,7 +183,7 @@ do
 
   vim.o.scrolloff = 1000
   vim.o.sidescrolloff = 12 -- cursor will stay 12 lines from the left/right when side-scrolling
-  vim.o.cmdheight = 1 -- more space in the neovim command line for displaying messages
+  vim.o.cmdheight = 2 -- more space in the neovim command line for displaying messages
   vim.o.wrap = false -- no soft wrap
   -- search results highlight themselves reactively
   vim.o.hlsearch = true
@@ -207,38 +207,33 @@ do
   -- spelling
   -- vim.o.spelllang = 'es,en_gb'
   -- vim.o.spell = true
+  vim.o.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 
-  vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- allows you to replace at all instances of the selected text
-  vim.keymap.set("n", "<leader>tmr", "<CMD>TableModeRealign<CR>", { buffer = true })
   vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-  vim.keymap.set("n", "<leader>o", "<CMD>update<CR> <CMD>source<CR>")
-  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-  vim.keymap.set("n", "<leader>co", "mz i✓ <Esc>`z") -- inserts a tick for a correct answer
-  vim.keymap.set("n", "<leader>i", "mz i✗ <Esc>`z") -- inserts a cross for an incorrect answer
-  vim.keymap.set("n", "<Esc>", "<CMD>noh<CR>")
-  vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- moves selected text down a line
-  vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- moves selected text up a line
-  vim.keymap.set("n", "<leader>g", "mzgqap`z") -- sets a mark (z), formats paragraph, goes back to mark
-  vim.keymap.set("x", "<leader>p", '"_dP') -- makes it so when text is copied and replaced over other text, the replaced text does not then become pastable with p
   vim.keymap.set("n", "<C-d>", "<C-d>zz") -- makes it so that ctrl-d moves down a half page while keeping the cursor in the middle of the screen
   vim.keymap.set("n", "<C-u>", "<C-u>zz") -- makes it so that ctrl-u moves up a half page while keeping the cursor in the middle of the screen
-  vim.keymap.set("v", "<S-TAB>", "<gv")
+  vim.keymap.set("n", "<Esc>", "<CMD>noh<CR>")
   vim.keymap.set("n", "<S-TAB>", "<<")
-  vim.keymap.set("v", "<TAB>", ">gv")
   vim.keymap.set("n", "<TAB>", ">>")
-  vim.keymap.set("n", "J", "mzJ`z") -- makes it so the cursor stays in the same place when appending the below line to current line
-  vim.keymap.set("n", "n", "nzzzv") -- makes it so going next keeps the value in the middle (e.g serch result is in the middle of the screen)
-  vim.keymap.set("n", "N", "Nzzzv") -- makes it so going back (opposite of "next") keeps the value in the middle (e.g serch result is in the middle of the screen)
+  vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+  vim.keymap.set("n", "<leader>co", "mz i✓ <Esc>`z") -- inserts a tick for a correct answer
+  vim.keymap.set("n", "<leader>g", "mzgqap`z") -- sets a mark (z), formats paragraph, goes back to mark
+  vim.keymap.set("n", "<leader>i", "mz i✗ <Esc>`z") -- inserts a cross for an incorrect answer
+  vim.keymap.set("n", "<leader>o", "<CMD>update<CR> <CMD>source<CR>")
+  vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) -- allows you to replace at all instances of the selected text
+  vim.keymap.set("n", "<leader>tmr", "<CMD>TableModeRealign<CR>", { buffer = true })
   vim.keymap.set("n", "H", "^")
+  vim.keymap.set("n", "J", "mzJ`z") -- makes it so the cursor stays in the same place when appending the below line to current line
   vim.keymap.set("n", "L", "$")
+  vim.keymap.set("n", "N", "Nzzzv") -- makes it so going back (opposite of "next") keeps the value in the middle (e.g serch result is in the middle of the screen)
+  vim.keymap.set("n", "n", "nzzzv") -- makes it so going next keeps the value in the middle (e.g serch result is in the middle of the screen)
+  vim.keymap.set("v", "<S-TAB>", "<gv")
+  vim.keymap.set("v", "<TAB>", ">gv")
+  vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- moves selected text down a line
+  vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv") -- moves selected text up a line
+  vim.keymap.set("x", "<leader>p", '"_dP') -- makes it so when text is copied and replaced over other text, the replaced text does not then become pastable with p
 
-  function make_transparent()
-    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
-    print("Transparency enabled")
-  end
+  function make_transparent() end
 
   local transparent = false
 
@@ -246,12 +241,19 @@ do
     transparent = not transparent
 
     if transparent then
-      make_transparent()
+      transparent = true
+      vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "NONE" })
+      print("Transparency enabled")
     else
       vim.cmd.colorscheme(vim.g.colors_name)
       print("Transparency disabled")
     end
   end, {})
+
+  vim.keymap.set("n", "<leader>to", ":ToggleOpacity<CR>")
 
   -- these are for work on flash cards in the format:
   -- source_language_prompt|target_language_answer
@@ -264,7 +266,8 @@ do
 
   local german_enabled = false
   local spanish_enabled = false
-  local languages = { "Spanish", "German" }
+  local basque_enabled = false
+  local languages = { "Basque", "German", "Spanish" }
 
   vim.api.nvim_create_user_command("ToggleLanguageKeymaps", function(opts)
     if opts.fargs[1]:lower() == "spanish" then
@@ -320,6 +323,14 @@ do
         vim.keymap.del({ "n" }, "9", { buffer = true })
         print("German keymaps off")
       end
+    elseif opts.fargs[1]:lower() == "basque" then
+      if basque_enabled == false then
+        vim.keymap.set("n", "1", "_f|i (1 cosa)<Esc>", { buffer = true })
+        vim.keymap.set("n", "2", "_f|i (2+ cosas)<Esc>", { buffer = true })
+      else
+        vim.keymap.del({ "n" }, "1", { buffer = true })
+        vim.keymap.del({ "n" }, "2", { buffer = true })
+      end
     else
       print("No recognised languages detected")
     end
@@ -371,7 +382,7 @@ do
   vim.keymap.set("n", "<leader>Y", '"+Y')
 
   -- alternative to `:w`, using `:up` and binding it to ZS: only saves the file if it has been changed
-  vim.keymap.set("n", "ZS", ":up<CR>")
+  vim.keymap.set("n", "ZS", ":w<CR>")
 
   -- go auto basic setup
   vim.api.nvim_create_autocmd("FileType", {
@@ -450,6 +461,22 @@ do
       vim.keymap.set("n", "<leader>p", "<CMD>TypstPreview<CR>", { buffer = true })
     end,
   })
+
+  -- vim.api.nvim_create_user_command("SetTextwidth", function()
+  --   vim.cmd("set textwidth=80")
+  --   print("textwidth=80")
+  -- end, { nargs = 0, desc = "Sets textwidth to 80." } )
+
+  -- vim.api.nvim_create_autocmd("FileType", {
+  --   pattern = "markdown",
+  --   callback = function()
+  --     vim.keymap.set("n", "<leader>G", "mz/<!-- BEGIN --><CR>gqG`z:noh<CR>", { buffer = true })
+  --   end,
+  -- })
+
+  -- TODO: add functionality to the above remap that finds begin,
+  -- makes a mark there, finds end, makes a mark there,
+  -- then executes gq between those marks.
 
   -- subject special keymaps
 
@@ -787,13 +814,14 @@ do
     log_level = nil,
   })
 
+  vim.pack.add({ gh("alec-gibson/nvim-tetris") })
   vim.pack.add({ gh("chomosuke/typst-preview.nvim") })
   -- vim.pack.add { gh 'junegunn/seoul256.vim' }
   -- vim.pack.add { gh 'rebelot/kanagawa.nvim' }
   vim.pack.add({ gh("navarasu/onedark.nvim") })
   require("onedark").setup({ style = "darker" })
   require("onedark").load()
-  make_transparent() -- have to make nvim transparent after loading the colorscheme
+  -- make_transparent() -- have to make nvim transparent after loading the colorscheme
   vim.pack.add({ gh("alanfortlink/blackjack.nvim") })
   vim.pack.add({ gh("dhruvasagar/vim-table-mode") })
   -- vim.pack.add { gh 'lukas-reineke/indent-blankline.nvim' }
@@ -828,7 +856,7 @@ do
   -- toggle keymappings for venn using <leader>v
   vim.api.nvim_set_keymap("n", "<leader>v", ":lua Toggle_venn()<CR>", { noremap = true })
 
-  vim.pack.add { gh 'saghen/filler-begone.nvim' }
+  vim.pack.add({ gh("saghen/filler-begone.nvim") })
 
   -- Simple and easy statusline.
   --  You could remove this setup call if you don't like it,
@@ -1010,7 +1038,7 @@ end
 do
   -- Useful status updates for LSP.
   vim.pack.add({ gh("j-hui/fidget.nvim") })
-  require("fidget").setup({})
+  -- require("fidget").setup({})
 
   --  This function gets run when an LSP attaches to a particular buffer.
   --    That is to say, every time a new file is opened that is associated with
@@ -1082,6 +1110,14 @@ do
     end,
   })
 
+  -- https://www.reddit.com/r/neovim/comments/s24zvh/how_can_i_load_a_user_dictionary_into_ltexls/
+  local path = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+  local words = {}
+
+  for word in io.open(path, "r"):lines() do
+    table.insert(words, word)
+  end
+
   -- Enable the following language servers
   --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
   --  See `:help lsp-config` for information about keys and how to configure
@@ -1091,6 +1127,16 @@ do
     gopls = {},
     pyright = {},
     rust_analyzer = {},
+    ltex_plus = {
+      settings = {
+        ltex = {
+          language = "en-GB",
+          dictionary = {
+            ["en-GB"] = words,
+          },
+        },
+      },
+    },
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
     --    https://github.com/pmizio/typescript-tools.nvim
@@ -1311,7 +1357,7 @@ do
     },
 
     sources = {
-      default = { "lsp", "path", "snippets" },
+      default = { "lsp", "path", "snippets", "omni" },
     },
 
     snippets = { preset = "luasnip" },
@@ -1432,3 +1478,59 @@ end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+do
+  -- vim.pack.add({ gh("lukelbd/vim-scrollwrapped") })
+
+  local function word_processor_mode()
+    local group = vim.api.nvim_create_augroup("AutoFormatOptions", {
+      clear = true,
+    })
+
+    -- vim.api.nvim_create_autocmd("InsertEnter", {
+    --   group = group,
+    --   callback = function()
+    --     vim.opt_local.formatoptions:remove("a")
+    --   end,
+    -- })
+
+    -- vim.api.nvim_create_autocmd("InsertLeave", {
+    --   group = group,
+    --   callback = function()
+    --     vim.opt_local.formatoptions:append("a")
+    --     vim.cmd("normal! mzgqap`z")
+    --   end,
+    -- })
+
+    -- https://pmac.opened.ca/2025/03/02/vim-as-a-word-processor/
+    -- vim.cmd("set formatoptions+=a")
+    -- vim.opt_local.textwidth = 79
+
+    vim.api.nvim_buf_set_keymap(0, "n", "j", "gj", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "k", "gk", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "v", "j", "gj", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "v", "k", "gk", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "H", "g^", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "n", "L", "g$", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "v", "H", "g^", { noremap = true, silent = true })
+    vim.api.nvim_buf_set_keymap(0, "v", "L", "g$", { noremap = true, silent = true })
+
+    vim.cmd("set wrap")
+    vim.opt.colorcolumn = ""
+    vim.o.scrolloff = 0
+    vim.opt_local.smartindent = true
+    vim.opt_local.spell = true
+    -- this adds entries including ' and " to everything
+    -- vim.cmd("setlocal spell spelllang=en-MY,de-DE,es-ES")
+    vim.cmd("setlocal spell spelllang=en-MY")
+
+    vim.opt_local.smoothscroll = true
+    vim.opt_local.linebreak = true
+    vim.opt_local.expandtab = false
+  end
+
+  -- Create a command to trigger "Word Processing Mode"
+  vim.api.nvim_create_user_command("WordMode", word_processor_mode, {})
+
+  vim.keymap.set("n", "<leader>w", ":WordMode<CR>")
+end
